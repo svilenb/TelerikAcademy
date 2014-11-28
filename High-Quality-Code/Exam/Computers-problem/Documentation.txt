@@ -1,0 +1,43 @@
+Design pattern: Simple Factory
+	Made ComputerManufacturerFactory class.
+
+Design pattern: Strategy
+	Giving different cpus to the computer gives different behaviour.
+	The Cpus also take IrandomNumbersProvider in his constructor which can be mocked and have different implementation.
+
+Design pattern: Template Method
+	HPManufacurer and Dellmanufacturer implement the abstract methods of the Computer manufacturer class.
+	The Cpu64Bit, Cpu32Bit and etc. implement the GetMaxValue method.
+
+Design pattern: Abstract factory
+	Made different computer manufacturers like HPManufacturer and DellManufacturer. Manufacturers make different Computers like ServerComputer, LaptopComputer and PCComputer.
+
+Design pattern: Composite
+	* 
+
+Design pattern: Mediator
+	Added a Motherboard class for making computer parts working without knowing for each other.
+
+Found bottlenecks:
+	Random number generation in Cpu class was made using unnecessary do while loop.
+	Fixed the calculation of a square number in the CPU class(made it faster).
+
+Found bugs:
+	Video card was always left null.
+	The invalid command message was never used.
+	* 
+
+Single responsibility principle
+	All classes have single responsibility.
+
+Open/closed principle
+	The adding of new Cpu implementations new manufactures and computer types is easy.
+
+Liskov substitution principle
+	All Cpu Implementation classes can substity the Cpu class.
+
+Interface segregation principle
+	* 
+
+Dependency inversion principle
+	The Cpu takes IRandomNumersProvider in his constructor for generating random numbers.
