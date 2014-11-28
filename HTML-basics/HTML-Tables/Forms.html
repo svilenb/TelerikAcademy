@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Required Forms</title>
+    <style type="text/css">
+        fieldset {
+            width: 400px;
+            border-color: black;
+            border-radius: 10px;
+        }
+
+        input {
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+        label:after {
+            content: ": ";
+        }
+
+        .BoldedSpan {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form method="get" action="apply-now.php">
+        <fieldset>
+            <legend>Registration Form</legend>
+            <label for="MemberName">Member Name</label>
+            <input type="text" id="MemberName" required="required" placeholder="Your name" />
+            <span class="BoldedSpan">req*</span>
+            <br />
+            <label for="Email">Email</label>
+            <input type="email" id="Email" required="required" pattern="[^ @]+@[^ @]+\.[^ @]+" placeholder="Your email" />
+            <span class="BoldedSpan">req*</span>
+            <br />
+            <label for="School">School</label>
+            <input type="text" id="School" required="required" placeholder="School name" />
+            <span class="BoldedSpan">req*</span>
+            <br />
+            <input type="image" src="images/submit-button.jpg" name="submitButton" alt="Submit" width="25" height="25" />
+        </fieldset>
+    </form>
+</body>
+</html>

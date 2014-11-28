@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>LinkedIn</title>    
+    <!--[if lt IE 9]>
+    <script src="dist/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <header>
+        <a href="#"><h1>LinkedIn</h1></a>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#LinkedInDescription">What is LinkedIn?</a></li>
+                <li><a href="#JoinLinkedIn">Join Today</a></li>
+                <li id="SignIn">
+                    Sign in
+                    <form method="get">
+                        <fieldset>
+                            <ul>
+                                <li>
+                                    <label for="singInEmail">Email</label>
+                                    <input type="email" id="singInEmail" required="required" pattern="[^ @]+@[^ @]+\.[^ @]+">
+                                </li>
+                                <li>
+                                    <label for="signInPassword">Password</label>
+                                    <input type="password" id="signInPassword" required="required" />
+                                </li>
+                                <li><input type="submit" value="Submit" /></li>
+                            </ul>
+                        </fieldset>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <hr />
+    <aside id="LinkedInDescription">
+        <h2>Over 175 million professionals use LinkedIn to exchange information, ideas and opportunities</h2>
+        <ul>
+            <li>Stay informed about your contacts and industry</li>
+            <li>Find the people &amp; knowledge you need to achieve your goals</li>
+            <li>Control your professional identity online</li>
+        </ul>
+    </aside>
+    <section id="JoinLinkedIn">
+        <header>
+            <h2>Join LinkedIn Today</h2>
+        </header>
+        <form method="get">
+            <fieldset>
+                <legend>Sign up</legend>
+                <nav>
+                    <ul>
+                        <li>
+                            <label for="signUpFirstName">First Name</label>
+                            <input type="text" id="signUpFirstName" required="required" />
+                        </li>
+                        <li>
+                            <label for="signUpLastName">Last Name</label>
+                            <input type="text" id="signUpLastName" required="required" />
+                        </li>
+                        <li>
+                            <label for="singUpEmail">Email</label>
+                            <input type="email" id="singUpEmail" required="required" pattern="[^ @]+@[^ @]+\.[^ @]+">
+                        </li>
+                        <li>
+                            <label for="signUpPassword">Password</label>
+                            <input type="password" id="signUpPassword" required="required" />
+                            <p>6 or more characters</p>
+                        </li>
+                    </ul>
+                    <input type="submit" value="Join Now" />
+                    <a href="" title="Agreement">*</a>
+                    <p>Already on LinkedIn? <a href="#SignIn">Sign in.</a></p>
+                </nav>
+            </fieldset>
+        </form>
+    </section>
+    <section>
+        <header>
+            <h2>Search for someone by name:</h2>
+        </header>
+        <form method="get">
+            <ul>
+                <li>
+                    <label for="searchFirstName">First Name</label>
+                    <input type="text" id="searchFirstName" required="required" />
+                </li>
+                <li>
+                    <label for="searchLastName">Last Name</label>
+                    <input type="text" id="searchLastName" required="required" />
+                </li>
+            </ul>
+            <input type="submit" value="Go" />
+        </form>
+    </section>
+</body>
+</html>

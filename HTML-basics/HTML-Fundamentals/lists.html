@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Lists</title>
+    <style type="text/css">
+        .OrderedListUpperRoman {
+            list-style-type: upper-roman;
+        }
+
+        .OrderedListLowerLatin {
+            list-style-type: lower-latin;
+        }
+
+        .OrderedListDecimal {
+            list-style-type: decimal;
+        }
+
+        .UnorderedListCircle {
+            list-style-type: circle;
+        }
+
+        .UnorderedListDisc {
+            list-style-type: disc;
+        }
+    </style>
+</head>
+<body>
+    <header>Preceding Text</header>
+    <section>
+        <ol class="OrderedListUpperRoman">
+            <li>
+                List Item 1
+                <ol class="OrderedListLowerLatin">
+                    <li>Nested Item 1.1</li>
+                    <li>Nested Item 1.2</li>
+                </ol>
+            </li>
+            <li>
+                List Item 2
+                <ol class="OrderedListDecimal">
+                    <li>Nested Item 2.1</li>
+                    <li>
+                        Nested Item 2.2
+                        <ul class="UnorderedListCircle">
+                            <li>Nested Item 2.2.1</li>
+                            <li>
+                                Nested Item 2.2.2
+                                <ul class="UnorderedListDisc">
+                                    <li>Nested Item 2.2.2.1</li>
+                                    <li>Nested Item 2.2.2.2</li>
+                                </ul>
+                            </li>
+                            <li>Nested Item 2.2.3</li>
+                        </ul>
+                    </li>
+                    <li>Nested Item 2.3</li>
+                </ol>
+            </li>
+            <li>
+                List Item 3
+                <ul class="UnorderedListDisc">
+                    <li>Nested Item 3.1</li>
+                    <li>Nested Item 3.2</li>
+                    <li>Nested Item 3.3</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+</body>
+</html>

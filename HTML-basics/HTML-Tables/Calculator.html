@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <style type="text/css">
+        table {
+            border-width: 10px;
+            background: skyblue;
+            border-color: darkblue;
+            border-spacing: 0px;
+            border-style: outset;
+            -moz-box-shadow: 10px 10px 5px #888;
+            -webkit-box-shadow: 10px 10px 5px #888;
+            box-shadow: 10px 10px 5px #888;
+        }
+
+        #Result {
+            text-align: right;
+        }
+
+        td {
+            padding: 0px;
+            height: 30px;
+            width: 30px;
+        }
+
+        .ColSpanTwo {
+            width: 60px;
+        }
+
+        .ColSpanFour {
+            width: 120px;
+        }
+
+        .Button {
+            height: inherit;
+            width: inherit;
+        }
+
+        .Display {
+            height: inherit;
+            width: inherit;
+        }
+    </style>
+</head>
+<body>
+    <form method="get" action="apply-now.php">
+        <table>
+            <tbody>
+                <tr>
+                    <td colspan="4" class="ColSpanFour">
+                        <input type="text" id="Result" class="Display" readonly="readonly" value="0" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="Button" value="1" /></td>
+                    <td><input type="button" class="Button" value="2" /></td>
+                    <td><input type="button" class="Button" value="3" /></td>
+                    <td><input type="button" class="Button" value="+" /></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="Button" value="4" /></td>
+                    <td><input type="button" class="Button" value="5" /></td>
+                    <td><input type="button" class="Button" value="6" /></td>
+                    <td><input type="button" class="Button" value="-" /></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="Button" value="7" /></td>
+                    <td><input type="button" class="Button" value="8" /></td>
+                    <td><input type="button" class="Button" value="9" /></td>
+                    <td><input type="button" class="Button" value="*" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="ColSpanTwo"><input type="button" class="Button" value="0" /></td>
+                    <td><input type="button" class="Button" value="." /></td>
+                    <td><input type="button" class="Button" value="/" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

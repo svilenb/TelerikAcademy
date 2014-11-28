@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Laptops Page</title>
+    <style type="text/css">
+        ul li {
+            list-style-type: none;
+            font-size: small;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        nav ul li {
+            list-style-type: none;
+            display: inline-block;
+            margin: 2px;
+            padding: 0px;
+        }
+
+        hr {
+            height: 1px;
+            background-color: black;
+        }
+
+        table {
+            border-style: solid;
+            border-color: black;
+            width: 340px;
+            float: left;
+        }
+
+            table fieldset {
+                display: inline-block;
+                width: 135px;
+                height: 140px;
+            }
+
+        .RightFieldset {
+            float: right;
+        }
+
+        form {
+            width: 700px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="">Apple</a></li>
+            <li><a href="">Toshiba</a></li>
+            <li><a href="">Lenovo</a></li>
+            <li><a href="">Dell</a></li>
+            <li><a href="">Asus</a></li>
+            <li><a href="">Hacer</a></li>
+            <li><a href="">HP</a></li>
+        </ul>
+    </nav>
+    <hr />
+    <section>
+        <form method="get" action="apply-now.php">
+            <table>
+                <tr>
+                    <td>
+                        <fieldset>
+                            <legend>Apple Macbook Air</legend>
+                            <img src="images/apple-air.png" width="65" height="40" alt="Apple Air" />
+                            <ul class="parameters">
+                                <li>64GB SSD</li>
+                                <li>2GB DDR</li>
+                                <li>1300 USD</li>
+                                <li>Intel Core i5</li>
+                            </ul>
+                        </fieldset>
+                    </td>
+                    <td>
+                        <fieldset>
+                            <legend>Apple Macbook Air</legend>
+                            <img src="images/apple-air.png" width="65" height="40" alt="Apple Air" />
+                            <ul class="parameters">
+                                <li>64GB SSD</li>
+                                <li>2GB DDR</li>
+                                <li>1300 USD</li>
+                                <li>Intel Core i5</li>
+                            </ul>
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <fieldset>
+                            <legend>Apple Macbook Air</legend>
+                            <img src="images/apple-air.png" width="65" height="40" alt="Apple Air" />
+                            <ul class="parameters">
+                                <li>64GB SSD</li>
+                                <li>2GB DDR</li>
+                                <li>1300 USD</li>
+                                <li>Intel Core i5</li>
+                            </ul>
+                        </fieldset>
+                    </td>
+                    <td>
+                        <fieldset>
+                            <legend>Apple Macbook Air</legend>
+                            <img src="images/apple-air.png" width="65" height="40" alt="Apple Air" />
+                            <ul class="parameters">
+                                <li>64GB SSD</li>
+                                <li>2GB DDR</li>
+                                <li>1300 USD</li>
+                                <li>Intel Core i5</li>
+                            </ul>
+                        </fieldset>
+                    </td>
+                </tr>
+            </table>
+            <fieldset class="RightFieldset">
+                <p>Min price: 500USD</p>
+                <input type="range" min="0" max="3000" value="500" step="100" />
+                <br />
+                <p>Max price: 1500USD</p>
+                <input type="range" min="0" max="3000" value="1500" step="100" />
+                <br />
+                <p>Min RAM: 4GB</p>
+                <input type="range" min="0" max="32" value="4" step="1" />
+                <br />
+                <p>Max RAM: 16GB</p>
+                <input type="range" min="0" max="32" value="16" step="1" />
+                <br />
+            </fieldset>
+        </form>
+    </section>
+</body>
+</html>

@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Grid component</title>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+        }
+
+        td, th {
+            text-align: left;
+            padding: 5px;
+            border-style: solid;
+            border-color: gray;
+            border-width: 1px;
+        }
+
+            td:nth-of-type(1) {
+                width: 100px;
+                text-align: left;
+            }
+
+            td:nth-of-type(2) {
+                width: 300px;
+                text-align: left;
+            }
+
+            td:nth-of-type(3) {
+                width: 200px;
+                text-align: left;
+            }
+
+            td:nth-of-type(4) {
+                width: 200px;
+                text-align: left;
+            }
+
+            td:nth-of-type(5) {
+                width: 200px;
+                text-align: left;
+            }
+
+            td:nth-of-type(6) {
+                width: 70px;
+                text-align: left;
+            }
+
+        thead tr:nth-child(1) {
+            background-color: #e7e9eb;
+        }
+
+        thead tr:nth-child(2) {
+            background: #f0f1f2; /* Old browsers */
+            background: -moz-linear-gradient(top, #f0f1f2 0%, #dcdee1 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f1f2), color-stop(100%,#dcdee1)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #f0f1f2 0%,#dcdee1 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #f0f1f2 0%,#dcdee1 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #f0f1f2 0%,#dcdee1 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #f0f1f2 0%,#dcdee1 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f1f2', endColorstr='#dcdee1',GradientType=0 ); /* IE6-9 */
+        }
+
+        thead tr:nth-child(3) {
+            background-color: #e7e9eb;
+        }
+
+        tfoot td {
+            background: #f0f1f2; /* Old browsers */
+            background: -moz-linear-gradient(top, #f0f1f2 0%, #dcdee1 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f1f2), color-stop(100%,#dcdee1)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #f0f1f2 0%,#dcdee1 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #f0f1f2 0%,#dcdee1 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #f0f1f2 0%,#dcdee1 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #f0f1f2 0%,#dcdee1 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f1f2', endColorstr='#dcdee1',GradientType=0 ); /* IE6-9 */
+        }
+
+        #ProductID {
+            width: 30px;
+        }
+
+        #ProductName {
+            width: 150px;
+        }
+
+        #UnitPrice {
+            width: 90px;
+        }
+
+        #QuantityPerUnit {
+            width: 110px;
+        }
+
+        #UnitsInStock {
+            width: 90px;
+        }
+
+        .RightSpan {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <form method="get">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="6">Drag a column header and drop it here to group by that column</th>
+                </tr>
+                <tr>
+                    <th><label for="ProductID">ProductID</label></th>
+                    <th><label for="ProductName">Product name</label></th>
+                    <th><label for="UnitPrice">Unit price</label></th>
+                    <th><label for="QuantityPerUnit">Quantity per unit</label></th>
+                    <th><label for="UnitsInStock">Units in stock</label></th>
+                    <th><label for="Discontinued">Discontinued</label></th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="text" id="ProductID" />
+                    </th>
+                    <th>
+                        <input type="text" id="ProductName" />
+                    </th>
+                    <th>
+                        <input type="text" id="UnitPrice" />
+                        <input type="button" value="&#9947;" />
+                    </th>
+                    <th>
+                        <input type="text" id="QuantityPerUnit" />
+                    </th>
+                    <th>
+                        <input type="text" id="UnitsInStock" />
+                        <input type="button" value="&#9947;" />
+                    </th>
+                    <th>
+                        <input type="checkbox" id="Discontinued" />
+                        <input type="button" value="&#9947;" />
+                    </th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="6">
+                        <input type="button" value="|&#9668;" />
+                        <input type="button" value="&#9668;" />
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">7</a>
+                        <a href="#">8</a>
+                        <a href="#">9</a>
+                        <a href="#">10</a> ...
+                        <input type="button" value="&#9658;" />
+                        <input type="button" value="&#9658;|">
+                        <label for="PageSize">Page size</label>
+                        <select id="PageSize">
+                            <option value="10" selected="selected">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <span class="RightSpan">335104 items in 33511 pages</span>
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Chai</td>
+                    <td>$18.00</td>
+                    <td>10 boxes x 20 bags</td>
+                    <td>39</td>
+                    <td><input type="checkbox" /></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Chans</td>
+                    <td>$19.00</td>
+                    <td>24 - 12 oz bottles</td>
+                    <td>17</td>
+                    <td><input type="checkbox" /></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Aniseed Syrup</td>
+                    <td>$10.00</td>
+                    <td>12 - 550 ml bottles</td>
+                    <td>13</td>
+                    <td><input type="checkbox" /></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Chef Anton's Cajun Seasoning</td>
+                    <td>$28.00</td>
+                    <td>48 - 6 oz jars</td>
+                    <td>38</td>
+                    <td><input type="checkbox" /></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Chef Anton's Gumbo Mix</td>
+                    <td>$24.00</td>
+                    <td>36 Boxes</td>
+                    <td>34</td>
+                    <td><input type="checkbox" checked="checked" disabled="disabled" /></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Chai</td>
+                    <td>$18.00</td>
+                    <td>10 boxes x 20 bags</td>
+                    <td>39</td>
+                    <td><input type="checkbox" /></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Chans</td>
+                    <td>$19.00</td>
+                    <td>24 - 12 oz bottles</td>
+                    <td>17</td>
+                    <td><input type="checkbox" /></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Aniseed Syrup</td>
+                    <td>$10.00</td>
+                    <td>12 - 550 ml bottles</td>
+                    <td>13</td>
+                    <td><input type="checkbox" /></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Chef Anton's Cajun Seasoning</td>
+                    <td>$28.00</td>
+                    <td>48 - 6 oz jars</td>
+                    <td>38</td>
+                    <td><input type="checkbox" /></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Chef Anton's Gumbo Mix</td>
+                    <td>$24.00</td>
+                    <td>36 Boxes</td>
+                    <td>34</td>
+                    <td><input type="checkbox" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

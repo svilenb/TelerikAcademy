@@ -1,0 +1,20 @@
+﻿body {
+    background-color: skyblue;
+}
+
+hr {
+    width: inherit;
+    height: 3px;
+}
+
+.StyledDL dt:after {
+    content: ": ";
+}
+
+.BoldedSpan {
+    font-weight: bold;
+}
+
+.ItalicSpan {
+    font-style: italic;
+}
