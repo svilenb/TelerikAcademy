@@ -1,0 +1,292 @@
+﻿.clearfix() {
+    zoom: 1;
+
+    &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+        clear: both;
+    }
+
+    &:before {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+}
+
+.linear-gradient(@from-color,@from-pos,@to-color,@to-pos,@repeat: no-repeat) {
+    background: @to-color;
+    background: -moz-linear-gradient(top, @from-color @from-pos, @to-color @to-pos);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(@from-pos,@from-color), color-stop(@to-pos,@to-color));
+    background: -webkit-linear-gradient(top, @from-color @from-pos,@to-color @to-pos);
+    background: -o-linear-gradient(top, @from-color @from-pos,@to-color @to-pos);
+    background: -ms-linear-gradient(top, @from-color @from-pos,@to-color @to-pos);
+    background: linear-gradient(to bottom, @from-color @from-pos,@to-color @to-pos);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{from-color}', endColorstr='@{to-color}',GradientType=0 );
+    background-repeat: @repeat;
+}
+
+@site-theme: #9215F2;
+@default-font: 16px normal Arial;
+@default-font-color: white;
+@default-border: 1px solid black;
+
+body, header, section, footer, article, h1, h2, h3, h4, h5, h6, input, button, label, p, fieldset, nav, ul, li, a, span, strong, em {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+div, h1, h3, h4, h5, h6, header, footer, body, section, nav, article, aside {
+    display: block;
+}
+
+.clearfix, body header div#header-container, body header nav, body header nav ul, body header nav ul li ul.sub-nav-list, body section, body aside {
+    .clearfix();
+}
+
+body {
+    font: @default-font;
+    color: @default-font-color;
+    .linear-gradient(@site-theme, 30%, lighten(@site-theme, 5%), 100%);
+
+    header {
+        padding: 25px 15px 5px 15px;
+        .linear-gradient(lighten(@site-theme, 30%), 20%, @site-theme, 100%);
+
+        div#header-container {
+
+            div#logo-container {
+                float: left;
+                position: relative;
+            }
+
+            div#reg-form-container {
+                float: right;
+                position: relative;
+                right: 5%;
+                top: 50%;
+
+                div {
+                    text-align: right;
+
+                    label {
+                        width: 50px;
+                        margin: 5px;
+                    }
+
+                    input {
+                        width: 130px;
+                        border: 1px solid darken(@site-theme, 10%);
+                        border-radius: 10px;
+                        padding: 2px 5px;
+                        margin: 5px;
+                        background-color: lighten(@site-theme, 15%);
+                        color: @default-font-color;
+                    }
+                }
+
+                button {
+                    margin-left: auto;
+                    margin-right: auto;
+                    font-weight: bold;
+                    border: 1px solid darken(@site-theme, 10%);
+                    border-style: outset;
+                    border-radius: 10px;
+                    padding: 5px 8px;
+                    background-color: lighten(@site-theme, 20%);
+                    color: @default-font-color;
+
+                    &:hover {
+                        background-color: @site-theme;
+                        border-style: inset;
+                    }
+                }
+            }
+        }
+
+        nav {
+            display: inline-block;
+            width: 75%;
+            margin: 20px 20px 20px 20px;
+            padding: 12px;
+            border: @default-border;
+            border-radius: 15px;
+
+            ul.nav-list {
+                list-style-type: none;
+            }
+
+            ul li {
+                float: left;
+                margin: 0;
+
+                a {
+                    text-decoration: none;
+                    padding: 0 10px 0 10px;
+                    color: @default-font-color;
+                    font: 1.4em normal Arial;
+
+                    &.selected {
+                        font-weight: bold;
+                    }
+                }
+
+                &:hover > a {
+                    text-decoration: underline;
+                    color: #a8a8a8;
+
+                    & + ul {
+                        display: block;
+                    }
+                }
+
+                ul.sub-nav-list {
+                    position: absolute;
+                    display: none;
+                    background-color: lighten(@site-theme, 20%);
+                    border-radius: 5px;
+                }
+
+                ul li {
+                    float: none;
+                    margin: 0 15px;
+                    padding: 10px 0;
+                    border-bottom: @default-border;
+
+                    &:last-of-type {
+                        border-bottom: none;
+                    }
+
+                    & > a {
+                        font-size: 1.2em;
+                        color: @default-font-color;
+                    }
+                }
+            }
+        }
+    }
+
+    section {
+        width: 75%;
+        float: left;
+
+        article {
+            margin: 20px;
+            padding: 20px;
+            border: @default-border;
+            border-radius: 15px;
+
+            header {
+                background: none;
+                padding: 5px;
+
+                h1 {
+                    font-size: 1.4em;
+                    padding: 0;
+                }
+            }
+
+            footer {
+                padding: 5px;
+
+                p {
+                    font-size: 16px;
+                    text-align: right;
+                    font-weight: normal;
+
+                    time {
+                        font-family: Consolas, 'Lucida Console', 'DejaVu Sans Mono', monospace;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: lighten(@site-theme, 30%);
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    aside {
+        float: left;
+        width: 20%;
+        margin: 20px;
+
+        & > ul {
+            list-style-type: none;
+
+            & > li {
+                margin: 15px 0;
+                padding: 15px;
+                border: @default-border;
+                border-radius: 5px;
+
+                h2 {
+                    font-size: 1.1em;
+                    font-weight: bold;
+                }
+
+                p {
+                    margin: 10px 5px;
+                    font-size: 16px;
+
+                    a {
+                        color: lighten(@site-theme, 40%);
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    strong {
+                        color: #ccc;
+                        font-weight: bold;
+                        font-style: normal;
+                    }
+
+                    em {
+                        color: #ccc;
+                        font-weight: normal;
+                        font-style: italic;
+                    }
+                }
+
+                ul {
+                    list-style-type: none;
+                    margin: 10px 0;
+
+                    li {
+                        margin: 5px 0 0 10px;
+                        background: url(images/li-dot.png) no-repeat;
+                        background-position: 0 50%;
+                        padding-left: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        clear: both;
+        padding: 15px 0 25px 0;
+        text-align: center;
+
+        p {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    }
+}

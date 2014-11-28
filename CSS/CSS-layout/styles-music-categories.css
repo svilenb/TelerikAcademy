@@ -1,0 +1,60 @@
+﻿article, section, button, img, header, h1, p, div, form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+}
+
+section {
+    width: 425px;
+    padding: 15px 10px;
+    background-color: #EEEEEE;
+    border-radius: 5px;
+}
+
+    section article {
+        margin: 40px 0px;
+        padding: 15px;
+        border: 2px solid #A6A6A6;
+        background-color: #FFFFFF;
+    }
+
+form {    
+    margin: 15px 2px 2px 2px;
+    float: right;
+}
+
+.button {
+    margin-left: 2px;    
+    padding: 3px 15px 3px 20px;
+    color: white;
+    border: 4px outset #CB0000;
+}
+
+    .button:active {
+        border-style: inset;
+    }
+
+.listen-button, .add-button {
+    background-image: url("images/button.png");
+}
+
+img {
+    float: left;
+    margin-right: 15px;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+    .clearfix:after {
+        content: "";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }

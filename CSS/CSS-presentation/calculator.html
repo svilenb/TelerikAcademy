@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <link href="styles-calculator.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="calculatorWindow">
+        <header>
+            <img src="images/calculator.png" width="12" height="17" alt="calculator" />
+            <h1>Calculator</h1>
+        </header>
+        <form id="window-buttons-container">
+            <button type="button" class="windowButton">_</button><button type="button" class="windowButton">H</button><button type="button" class="windowButton">&Chi;</button>
+        </form>
+        <nav class="menu">
+            <ul>
+                <li>View</li>
+                <li>Edit</li>
+                <li>Help</li>
+            </ul>
+        </nav>
+        <div id="calculator-main-part">
+            <form>
+                <input type="text" class="display border" value="8854455" />
+            </form>
+            <div class="bits-container border">
+                <ul>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                </ul>
+                <ul class="bits-to-decimal">
+                    <li>63&nbsp;&nbsp;</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li>47&nbsp;&nbsp;</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li>&nbsp;&nbsp;32</li>
+                </ul>
+                <ul>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                </ul>
+                <ul class="bits-to-decimal">
+                    <li>31&nbsp;&nbsp;</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li>15&nbsp;&nbsp;</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li>&nbsp;&nbsp;&nbsp;0</li>
+                </ul>
+            </div>
+            <aside>
+                <form>
+                    <ul class="border">
+                        <li><input type="radio" name="numeral-system" id="hex" /><label for="hex">Hex</label></li>
+                        <li><input type="radio" name="numeral-system" checked="checked" id="dec" /><label for="dec">Dec</label></li>
+                        <li><input type="radio" name="numeral-system" id="oct" /><label for="oct">Oct</label></li>
+                        <li><input type="radio" name="numeral-system" id="bin" /><label for="bin">Bin</label></li>
+                    </ul>
+                    <ul class="border">
+                        <li><input type="radio" name="numeral-system-word" checked="checked" id="qword" /><label for="qword">Qword</label></li>
+                        <li><input type="radio" name="numeral-system-word" id="dword" /><label for="dword">Dword</label></li>
+                        <li><input type="radio" name="numeral-system-word" id="word" /><label for="word">Word</label></li>
+                        <li><input type="radio" name="numeral-system-word" id="byte" /><label for="byte">Byte</label></li>
+                    </ul>
+                </form>
+            </aside>
+            <form>
+                <table class="buttons">
+                    <tr class="button-rows">
+                        <td><button class="border disabled-button">&nbsp;</button></td>
+                        <td><button class="border operator bold">Mod</button></td>
+                        <td><button class="border disabled-button bold">A</button></td>
+                        <td><button class="border memory bold">MC</button></td>
+                        <td><button class="border memory bold">MR</button></td>
+                        <td><button class="border memory bold">MS</button></td>
+                        <td><button class="border memory bold">M+</button></td>
+                        <td><button class="border memory bold">M-</button></td>
+                    </tr>
+                    <tr class="button-rows">
+                        <td><button class="border operator bold">(</button></td>
+                        <td><button class="border operator bold">)</button></td>
+                        <td><button class="border disabled-button bold">B</button></td>
+                        <td><button class="border operator bold bigger-text">&larr;</button></td>
+                        <td><button class="border operator bold">CE</button></td>
+                        <td><button class="border operator bold">C</button></td>
+                        <td><button class="border operator bold">±</button></td>
+                        <td><button class="border disabled-button bold">v</button></td>
+                    </tr>
+                    <tr class="button-rows">
+                        <td><button class="border operator bold">RoL</button></td>
+                        <td><button class="border operator bold">RoR</button></td>
+                        <td><button class="border disabled-button bold">C</button></td>
+                        <td><button class="border number">7</button></td>
+                        <td><button class="border number">8</button></td>
+                        <td><button class="border number">9</button></td>
+                        <td><button class="border operator bold">/</button></td>
+                        <td><button class="border disabled-button bold">%</button></td>
+                    </tr>
+                    <tr class="button-rows">
+                        <td><button class="border operator bold">Or</button></td>
+                        <td><button class="border operator bold">Xor</button></td>
+                        <td><button class="border disabled-button bold">D</button></td>
+                        <td><button class="border number">4</button></td>
+                        <td><button class="border number">5</button></td>
+                        <td><button class="border number">6</button></td>
+                        <td><button class="border operator bold">*</button></td>
+                        <td><button class="border disabled-button bold">1/x</button></td>
+                    </tr>
+                    <tr class="button-rows">
+                        <td><button class="border operator bold">Lsh</button></td>
+                        <td><button class="border operator bold">Rsh</button></td>
+                        <td><button class="border disabled-button bold">E</button> </td>
+                        <td><button class="border number">1</button></td>
+                        <td><button class="border number">2</button></td>
+                        <td><button class="border number">3</button></td>
+                        <td><button class="border operator bold">-</button></td>
+                        <td rowspan="2"><button class="border operator bigger-text bold">=</button></td>
+                    </tr>
+                    <tr class="button-rows">
+                        <td><button class="border operator bold">Not</button></td>
+                        <td><button class="border operator bold">And</button></td>
+                        <td><button class="border disabled-button bold">F</button></td>
+                        <td colspan="2"><button class="border number zero">0</button></td>
+                        <td><button class="border disabled-button bold">.</button></td>
+                        <td><button class="border operator bold">+</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

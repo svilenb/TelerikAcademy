@@ -1,0 +1,45 @@
+﻿body, input, label, img, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+@standard-margin: 5px;
+@small-picture-height: 125px;
+@small-picture-width: 150px;
+@big-picture-height: 500px;
+@big-picture-width: 600px;
+@standard-border: 1px solid black;
+
+ul {
+    text-align: center;
+    list-style-type: none;
+
+    li {
+        margin: @standard-margin;
+        display: inline-block;
+    }
+}
+
+input {
+    display: none;
+
+    &:checked + label .big {
+        display: inline-block;
+    }
+}
+
+.small {
+    border: @standard-border;
+    height: @small-picture-height;
+    width: @small-picture-width;
+}
+
+.big {
+    display: none;
+    position: absolute;
+    top: @small-picture-height + 2 * @standard-margin;
+    left: @standard-margin;
+    height: @big-picture-height;
+    width: @big-picture-width;
+    border: @standard-border;
+}
