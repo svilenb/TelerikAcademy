@@ -1,0 +1,17 @@
+﻿.slide {
+    display: none;
+}
+
+    .slide.visible {
+        display: block;
+        width: 500px;
+        height: 500px;
+        border: 10px solid black;
+        margin: 0 auto;
+    }
+
+#buttons {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}

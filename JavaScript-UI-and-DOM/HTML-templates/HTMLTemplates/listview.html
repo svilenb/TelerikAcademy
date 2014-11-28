@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>ListView</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+            table th, td {
+                border: 1px solid black;
+                padding: 5px;
+            }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <ul id="books-list" data-template="book-item-template"></ul>
+        <table>
+            <thead>
+                <tr><th>#</th><th>Name</th><th>Mark</th></tr>
+            </thead>
+            <tbody id="students-table" data-template="students-row-template"></tbody>
+        </table>
+    </div>
+    <script id="book-item-template" type="text/x-handlebars-template">
+        {{#books}}
+        <li class="book-item">
+            <a href="/#books/{{id}}">
+                <strong>{{title}}</strong>
+            </a>
+        </li>
+        {{/books}}
+    </script>
+    <script id="students-row-template" type="text/x-handlebars-template">
+        {{#students}}
+        <tr class="student-row">
+            <td>{{number}}</td>
+            <td>{{name}}</td>
+            <td>{{mark}}</td>
+        </tr>
+        {{/students}}
+    </script>
+    <script src="libs/jquery-2.1.1.min.js"></script>
+    <script src="libs/handlebars-v1.3.0.js"></script>
+    <script src="scripts/listview.js"></script>
+</body>
+</html>

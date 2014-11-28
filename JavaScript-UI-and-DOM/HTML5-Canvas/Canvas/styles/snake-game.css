@@ -1,0 +1,43 @@
+﻿body {
+    color: white;
+    background-color: #39ade0;
+}
+
+header {
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#game-information {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid white;
+    float: left;
+}
+
+.important {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#game-ui {
+    display: block;
+    margin-left: 320px;
+    width: 400px;
+    border: 1px solid white;
+    margin: 0 auto;
+}
+
+#the-canvas {
+    border: 1px solid white;
+}
+
+#buttons {
+    border: 1px solid white;
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+}

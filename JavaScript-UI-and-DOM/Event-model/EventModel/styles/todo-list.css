@@ -1,0 +1,14 @@
+﻿#todo-list {
+    border: 1px solid black;
+    width: 500px;
+    height: 400px;
+    overflow: scroll;
+}
+
+#todo-list h1 {
+    text-align: center;
+}
+
+.delete {
+    margin-right: 10px;
+}
