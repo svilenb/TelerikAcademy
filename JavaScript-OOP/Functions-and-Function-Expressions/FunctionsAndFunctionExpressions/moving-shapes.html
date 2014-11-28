@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Moving shapes</title>
+    <style type="text/css">
+        body {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Create a module that works with moving div nodes. Implement functionality for:
+        <br />
+        Add new moving div element to the DOM
+        <br />
+        The module should generate random background, font and border colors for the div element
+        <br />
+        All the div elements are with the same width and height
+        <br />
+        The movements of the div nodes can be either circular or rectangular
+        <br />
+        The elements should be moving all the time
+    </p>
+    <button type="button" id="add-circular-div">Add div with circular movement</button>
+    <button type="button" id="add-rectangular-div">Add div with rectangular movement</button>
+    <div id="container"></div>
+    <script src="scripts/moving-shapes.js"></script>
+    <script type="text/javascript">
+        (function () {
+            var addCircDivButtuon = document.getElementById('add-circular-div'),
+                addRectDivButton = document.getElementById('add-rectangular-div');
+
+            addCircDivButtuon.addEventListener('click', function () {
+                movingShapes.add('ellipse');
+            });
+
+            addRectDivButton.addEventListener('click', function () {
+                movingShapes.add('rect');
+            });
+        }());
+    </script>
+</body>
+</html>

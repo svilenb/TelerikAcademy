@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>Canvas shapes</title>
+    <style type="text/css">
+        #the-canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="the-canvas" width="400" height="300"></canvas>
+    <script src="scripts/canvas-shapes.js"></script>
+    <script type="text/javascript">
+        (function () {
+            var drawer = new CanvasDrawer('the-canvas');
+
+            drawer.drawRect(10, 10, 40, 100);
+            drawer.drawCircle(150, 150, 40);
+            drawer.drawLine(80, 20, 300, 70);
+        }());
+    </script>
+</body>
+</html>

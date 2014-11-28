@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Dom module</title>
+</head>
+<body>
+    <p>
+        Create a module for working with DOM. The module should have the following functionality
+        <br />
+        Add DOM element to parent element given by selector
+        <br />
+        Remove element from the DOM  by given selector
+        <br />
+        Attach event to given selector by given event type and event hander
+        <br />
+        Add elements to buffer, which appends them to the DOM when their count for some selector becomes 100
+        <br />
+        The buffer contains elements for each selector it gets
+        <br />
+        Get elements by CSS selector
+        <br />
+        The module should reveal only the methods
+    </p>
+    <script src="scripts/dom-module.js"></script>
+    <script type="text/javascript">
+        (function () {
+            var divWrapper = document.createElement("div");
+            divWrapper.id = "wrapper";
+
+            domModule.append(divWrapper, "body");
+
+            var div = document.createElement("div"),
+                currentChild,
+                i;
+            for (i = 1; i <= 100; i++) {
+                currentChild = div.cloneNode(true);
+                currentChild.id = "child" + i.toString();
+                currentChild.innerHTML = "Child: " + i;
+                domModule.appendToBuffer("#wrapper", currentChild);
+            }
+
+            domModule.remove("#child5").remove("#child2");
+            domModule.attach("#child1", "click", function () {
+                alert("Hello");
+            });
+        }());
+    </script>
+</body>
+</html>

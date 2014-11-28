@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Special console</title>
+</head>
+<body>
+    <p>
+        Create a module to work with the console object.Implement functionality for:
+        <br />
+        Writing a line to the console
+        <br />
+        Writing a line to the console using a format
+        <br />
+        Writing to the console should call toString() to each element
+        <br />
+        Writing errors and warnings to the console with and without format
+    </p>
+    <script src="scripts/special-console.js"></script>
+    <script type="text/javascript">
+        (function () {
+            specialConsole.writeLine("Message: hello");            
+            specialConsole.writeLine("Message: {0}", "hello");
+            specialConsole.writeError("Error: Something happened");
+            specialConsole.writeError("Error: {0}", "Something happened");
+            specialConsole.writeWarning("Warning: A warning");
+            specialConsole.writeWarning("Warning: {0}", "A warning");
+            specialConsole.writeLine(5);
+        }());
+    </script>
+</body>
+</html>

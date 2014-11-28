@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Snake game</title>
+    <link href="styles/snake-game.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>Classic snake game</h1>
+    </header>
+    <section id="game-information">
+        <ul>
+            <li>
+                Use the arrows to move the snake.
+            </li>
+            <li>You can use the keys N, S, and P instead of the html buttons new game, start, and stop</li>
+            <li><span class="important">In order to play the game in Firefox you have to click on the canvas to make the keys work!</span></li>
+            <li>The game works very well on Chrome!</li>
+            <li>The game doesn't work on Internet Explorer because I use the unsupported CustomEvent class</li>
+        </ul>
+    </section>
+    <section id="game-ui">
+        <canvas id="the-canvas" width="280" height="320"></canvas>
+        <div id="buttons">
+            <button id="new-game-button" type="button">New game</button>
+            <button id="start-button" type="button">Start</button>
+            <button id="stop-button" type="button">Stop</button>            
+        </div>
+    </section>
+    <script src="libs/jquery-2.1.1.min.js"></script>
+    <script src="scripts/renderers.js"></script>
+    <script src="scripts/game-objects.js"></script>
+    <script src="scripts/games.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

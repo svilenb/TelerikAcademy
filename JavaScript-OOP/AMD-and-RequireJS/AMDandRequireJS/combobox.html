@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>ComboBox</title>
+    <link href="styles/combobox.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/x-handlebars-template" id="animal-template">
+        <div class="animal-item clearfix" id="animal-item-{{id}}">
+            <strong class="animal-name">{{name}}</strong>
+            <img src="{{picture}}" width="80" height="80" alt="{{name}}"/>
+        </div>
+    </script>
+    <script src="libs/require.js" data-main="scripts/combobox"></script>
+</body>
+</html>
