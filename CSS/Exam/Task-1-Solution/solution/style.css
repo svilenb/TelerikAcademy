@@ -1,0 +1,88 @@
+html,
+body,
+header,
+div,
+nav,
+ul,
+li,
+h1,
+h2,
+h3,
+article,
+p,
+a {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  font-family: Tahoma, sans-serif;
+}
+#wrapper {
+  margin-left: 5px;
+  width: 960px;
+}
+.clear {
+  clear: both;
+}
+body {
+  font-size: 14px;
+}
+body header #archive {
+  margin-top: 5px;
+  font-size: 10px;
+}
+body header #archive ul {
+  list-style-type: none;
+  text-align: right;
+}
+body header #archive ul li {
+  display: inline-block;
+  padding: 0 5px;
+}
+body header #archive ul li a {
+  color: black;
+  text-decoration: none;
+}
+body header #header {
+  position: relative;
+  font-size: 18px;
+  background-image: url('images/topnav_divider.png');
+  background-repeat: repeat-x;
+  padding: 15px;
+  zoom: 1;
+}
+body header #header:after {
+  display: block;
+  height: 0;
+  content: "";
+  clear: both;
+}
+body header #header ul {
+  float: left;
+  list-style-type: none;
+  margin-left: 25px;
+}
+body header #header ul li {
+  display: inline-block;
+  margin: 5px 10px;
+}
+body header #header ul li a {
+  color: white;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+body header #header h1 {
+  float: right;
+  color: white;
+  font-size: 1.7rem;
+}
+body #content h1 {
+  font-size: 24px;
+  margin: 15px 0;
+}
+body #content article p {
+  text-align: justify;
+  margin: 10px 0;
+}
+/*# sourceMappingURL=style.css.map */
