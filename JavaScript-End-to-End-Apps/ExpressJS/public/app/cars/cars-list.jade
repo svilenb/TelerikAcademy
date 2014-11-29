@@ -1,0 +1,32 @@
+.title-options
+    h2 {{listTitle}}
+    .options
+        button(ng-click="prevPage()") <
+        input(type='text', size='2', maxlength='2', ng-model="page", ng-change="setPage()")
+        button(ng-click="nextPage()") >
+        a.button(href='#/cars/add', ng-show="identity.isAuthenticated()") Add
+table.cars
+    thead
+        tr
+            th Car
+            th
+                | Year
+                span(ng-click="sortBy('yearOfProduction')") ⇅
+            th Engine
+            th Gearbox
+            th(colspan="2")
+                | Price
+                span(ng-click="sortBy('price')") ⇅
+    tbody
+        tr(ng-repeat="car in cars")
+            td
+                a.neutral(href='#/cars/{{car._id}}')
+                    img(src='{{car.photoUrl}}', width='67', height='50', alt='{{car.make.name}} {{car.model.name}}')
+                a(href='#/cars/{{car._id}}') {{car.make.name}} {{car.model.name}}
+            td {{car.yearOfProduction}}
+            td {{car.engineType.name}}
+            td {{car.gearboxType.name}}
+            td
+                span.price {{car.price}} BGN
+            td(ng-show="identity.currentUser.isAdmin()")
+                a.button(href='#/cars/{{car._id}}/modify') Edit

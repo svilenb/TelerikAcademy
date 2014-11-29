@@ -1,0 +1,28 @@
+form(name="profileForm")
+    fieldset
+        legend Profile Settings
+        .row
+            p.title
+                | General
+            label(for="rep-name")
+                | The name that shows upon every of your ads
+            input(type='text', id="rep-name", placeholder='Representative name', ng-model="settingsData.representativeName")
+        .row
+            label(for="email")
+                | Email (used as a contact info)
+            input(type='email', id="email", placeholder='Email', ng-model="settingsData.email")
+        .row
+            label(for="phone")
+                | Phone (used as a contact info)
+            input(type='text', id="phone", placeholder='Phone', ng-model="settingsData.phoneNumber")
+        .row
+            br
+            p.title
+                | Change Password
+            input(type='password', placeholder='New Password', ng-model="settingsData.password")
+        hr
+        br
+        .row
+            input(type='password', placeholder='Current Password', ng-model="settingsData.currentPassword", required)
+        .row
+            button(ng-click="update(settingsData)", ng-disabled="profileForm.$invalid") UPDATE

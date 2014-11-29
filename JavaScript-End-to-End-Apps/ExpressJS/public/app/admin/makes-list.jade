@@ -1,0 +1,17 @@
+.title-options
+    h2 Car makes
+    .options
+        a.button(href='#/admin/makes/add') Add
+table.cars
+    thead
+        tr
+            th
+                | Make name
+                span(ng-click="sortBy('')") ⇅
+            th
+    tbody
+        tr(ng-repeat="make in makes")
+            td
+                a(href='#/admin/makes/{{make._id}}') {{make.name}}
+            td
+                a.button(href='#/admin/makes/{{make._id}}') Edit

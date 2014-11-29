@@ -1,0 +1,60 @@
+.ad
+    .photo
+        a.neutral(href='{{carData.photoUrl}}', data-lightbox='image-1', data-title='{{carData.make.name}} {{carData.model.name}}')
+            img(src='{{carData.photoUrl}}', width='280', height='211', alt='')
+    .info
+        h3 {{carData.make.name}} {{carData.model.name}}
+        .detailed-data
+            .general
+                .gen-data
+                    .car-info-icon.cal(title='Year of Production')
+                    p {{carData.yearOfProduction}}
+                .gen-data
+                    .car-info-icon.dist(title='Mileage')
+                    p {{carData.mileage}} km
+                .gen-data
+                    .car-info-icon.engine(title='Engine Type')
+                    p {{carData.engineType.name}}
+                .gen-data
+                    .car-info-icon.gears(title='Gearbox Type')
+                    p {{carData.gearboxType.name}}
+                .gen-data
+                    .car-info-icon.hp(title='Horsepower')
+                    p {{carData.horsepower}}hp
+            .additional-info
+                p
+                    span Displacement
+                    |  {{carData.engineDisplacement}}cc
+                p
+                    span Category
+                    |  {{carData.category.name}}
+                p
+                    span Color
+                    |  {{carData.color.name}}
+                p
+                    span Region
+                    |  {{carData.region.name}}
+            .price
+                p
+                    span.price-tag {{carData.price}} BGN
+                p.edit
+                    a.button(href='#/cars/{{carData._id}}/modify', ng-show="identity.currentUser.isAdmin()") Edit
+h2 Description
+hr
+p.ad-description
+    | {{carData.description}}
+.contact-data
+    p
+        | Posted by:
+        strong  {{carData.user.username}}
+        strong(ng-if="carData.user.representativeName")  ({{carData.user.representativeName}})
+        br
+        | Date:
+        strong  {{carData.published | date: 'd MMM, HH:mm' }}
+    p
+        | Email:
+        strong  {{carData.user.email}}
+        br
+        span(ng-if="carData.user.phoneNumber")
+            | Phone:
+            strong  {{carData.user.phoneNumber}}

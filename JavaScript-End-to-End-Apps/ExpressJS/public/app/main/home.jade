@@ -1,0 +1,46 @@
+form(name="searchForm")
+    fieldset
+        legend Search for a car
+        .row
+            .col
+                .row
+                    p.title Car
+                    .col
+                        label(for='make') Make
+                        div(car-makes-select)
+                    .col
+                        label(for='model') Model
+                        div(car-models-select)
+                .row
+                    p.title Price Range
+                    .col
+                        label(for='from-price') From
+                        input#from-price.static-input-width(min='1', type='number', ng-model="ad.fromPrice")
+                    .col
+                        label(for='to-price') To
+                        input#to-price.static-input-width(min='1', type='number', ng-model="ad.toPrice")
+            .col
+                .row
+                    p.title Year of Production
+                    .col
+                        label(for='from-year') From
+                        select#year-of-prod.stat-sel-raligned-width(ng-model="ad.yearFrom", ng-change="updateToYears()")
+                            option(ng-repeat="year in yearsFrom") {{year}}
+                    .col
+                        label(for='to-year') To
+                        select#year-of-prod.stat-sel-raligned-width(ng-model="ad.yearTo")
+                            option(ng-repeat="year in yearsTo") {{year}}
+                .row
+                    p.title Other
+                    .col
+                        label(for='from-gearbox') Gearbox
+                        div(gearbox-type-select)
+                    .col
+                        label(for='to-engine') Engine
+                        div(engine-type-select)
+        .row
+            button(ng-click="search(ad)") SEARCH
+h2 Latest ads
+hr
+br
+div(car-thumbnails)

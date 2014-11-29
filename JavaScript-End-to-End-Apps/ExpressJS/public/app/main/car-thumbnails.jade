@@ -1,0 +1,19 @@
+#latest-ads
+    .thumb-ad(ng-repeat="car in filteredCars")
+        .photo
+            a.neutral(href='#/cars/{{car._id}}')
+                img(src='{{car.photoUrl}}', width='135', height='101', alt='')
+        .info
+            p.title
+                a(href='#/cars/{{car._id}}') {{car.make.name}} {{car.model.name}}
+            p
+                span.price {{car.price}} BGN
+            p
+                span.field Year:
+                |  {{car.yearOfProduction}}
+            p
+                span.field Engine:
+                |  {{car.engineType.name}}
+            p
+                span.field Gearbox:
+                |  {{car.gearboxType.name}}

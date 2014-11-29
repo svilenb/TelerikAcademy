@@ -1,0 +1,11 @@
+form(name="modelForm")
+    fieldset
+        legend {{manipName}} model
+        .row
+            label(for="make") Select make
+            div(car-makes-select)
+        .row
+            label(for='model') Enter model name
+            input(type='text', id='model', placeholder='Name', ng-model="ad.name", required)
+        .row
+            button(ng-click="manipulateModel(ad)", ng-disabled="modelForm.$invalid") {{buttonName}}

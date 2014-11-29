@@ -1,0 +1,8 @@
+form(name="makeForm")
+    fieldset
+        legend {{manipName}} make
+        .row
+            label(for='make') Enter make name
+            input(type='text', id='make', placeholder='Name', ng-model="makeName", required)
+        .row
+            button(ng-click="manipulateMake(makeName)", ng-disabled="makeForm.$invalid") {{buttonName}}

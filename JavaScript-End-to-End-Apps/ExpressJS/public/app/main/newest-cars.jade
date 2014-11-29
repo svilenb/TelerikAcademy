@@ -1,0 +1,6 @@
+div(ng-repeat="car in cars | orderBy: '-published' | limitTo: 10")
+    .row
+        .col-md-3
+            | {{ car.published | date: 'MMM d' }}
+        .col-md-9
+            | {{ car.make }}

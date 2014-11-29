@@ -1,0 +1,71 @@
+form(name="carAdForm", method='post', action='/api/cars', enctype='multipart/form-data')
+    fieldset
+        legend {{carAdFormTitle}}
+        .row
+            .col
+                .row
+                    p.title Select the car make and model
+                    .col
+                        label(for='make') Make
+                        div(car-makes-select)
+                    .col
+                        label(for='model') Model
+                        div(car-models-select)
+                .row
+                    p.title Year of Production
+                    .col
+                        label(for='year-of-prod') Pick the year the car was produced
+                        div(year-select)
+                .row
+                    p.title Region & Mileage
+                    .col
+                        label(for='region') Region
+                        div(region-select)
+                    .col
+                        label(for='mileage') Mileage (In kilometers)
+                        input#mileage.static-number-width(type='number', min='0', ng-model="ad.mileage", name='mileage')
+                        | km
+                .row
+                    p.title Exterior
+                    .col
+                        label(for='color') Car color
+                        div(color-select)
+                    .col
+                        label(for='category') Category
+                        div(category-select)
+            .col
+                .row
+                    p.title Price
+                    .col
+                        label(for='price') In BGN
+                        input#price.static-number-width(type='number', min='1', ng-model="ad.price", name='price')
+                        | BGN
+                .row
+                    p.title Gearbox & Engine
+                    .col
+                        label(for='gearbox') Gearbox
+                        div(gearbox-type-select)
+                    .col
+                        label(for='engine') Engine
+                        div(engine-type-select)
+                .row
+                    p.title Horsepower & Engine Displacement
+                    .col
+                        label(for='hp') Horsepower
+                        input#hp.static-number-width(type='number', min='1', ng-model="ad.horsepower", name='horsepower')
+                        | hp
+                    .col
+                        label(for='displ') Displacement
+                        input#displ.static-number-width(size='10', type='number', min='1', ng-model="ad.engineDisplacement", name='engineDisplacement')
+                        | cc
+                .row
+                    p.title &nbsp;
+                    .col
+                        label(for='photo') Photo
+                        input#photo(type='file', ng-model="photo", name='photoUrl')
+        .row
+            p.title Description
+            label(for='descr') Add additional information about the vehicle
+            textarea#descr(ng-model="ad.description", name='description')
+        .row
+            input(type='submit', ng-click="sendData(ad)", value='{{carAdFormButton}}' ng-disabled="carAdForm.$invalid")

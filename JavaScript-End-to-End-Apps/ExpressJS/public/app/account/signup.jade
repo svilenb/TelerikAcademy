@@ -1,0 +1,13 @@
+form(name="signUpForm")
+    fieldset
+        legend Register
+        .row
+            input(type='text', placeholder='Username', ng-model="userData.username", required)
+        .row
+            input(type='email', placeholder='Email', ng-model="userData.email", required)
+        .row
+            input(type='password', placeholder='Password', ng-model="userData.password", required)
+        .row
+            input(type='password', placeholder='Repeat Password', ng-model="userData.confirmPassword", required)
+        .row
+            button(ng-click="signup(userData)", ng-disabled="signUpForm.$invalid") REGISTER

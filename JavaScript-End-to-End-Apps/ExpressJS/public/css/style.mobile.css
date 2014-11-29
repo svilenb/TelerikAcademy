@@ -1,0 +1,87 @@
+@media screen and (max-width: 900px) {
+    #wrapper {
+        width: 100%;
+    }
+
+    fieldset .col {
+        float: none;
+        clear: both;
+    }
+
+    input, select, .static-input-width, .static-select-width, .stat-sel-raligned-width, .static-number-width {
+        width: 95%;
+    }
+
+    #main-footer {
+        text-align: center;
+    }
+
+    #main-footer span {
+        clear: both;
+        float: none;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    #main-header h1.header {
+        display: none;
+    }
+
+    #main-header .logo {
+        margin-left: 5px;
+    }
+
+    .ad .photo, .ad .info {
+        clear: both;
+        float: none;
+        text-align: center;
+    }
+
+    .ad .info > h3 {
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .ad .detailed-data {
+        float: none;
+        width: 100%;
+    }
+
+    .ad .detailed-data > div {
+        clear: both;
+        float: none;
+    }
+
+    .ad .detailed-data > .general {
+        position: relative;
+        width: 300px;
+        margin: 0 auto;
+        padding: 10px;
+        box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.5);
+        margin-top: 10px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+    .ad .detailed-data > div.price {
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        padding: 15px 0 0 0;
+    }
+
+    .ad .info span.price-tag {
+        font-size: 25px;
+    }
+
+    .title-options input {
+        width: auto;
+    }
+
+    table.cars > thead th:nth-child(3), table.cars > tbody td:nth-child(3),
+    table.cars > thead th:nth-child(4), table.cars > tbody td:nth-child(4) {
+        display: none;
+    }
+}

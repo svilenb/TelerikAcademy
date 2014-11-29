@@ -1,0 +1,17 @@
+extends includes/layout
+block main-content
+    #wrapper
+        header#main-header
+            a(href='#/')
+                img.logo(src='img/logo.png', width='56', height='50', alt='logo')
+            h1.header Number one in junk cars
+            div(auth-bar)
+        section#main(ng-view)
+
+        footer#main-footer
+            span.left AUTO TRADER 2014
+            span.left A team "Hades" project, End-to-End Javascript Applications Course
+            span.right
+                a.title(href='http://academy.telerik.com', target='_blank') Telerik Academy 2013/2014
+            span.right
+                a(href='https://github.com/SStoyanov1/AutoTrader', target='_blank') GitHub Repo

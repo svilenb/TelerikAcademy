@@ -1,0 +1,14 @@
+{
+  "name": "FileUpload",
+  "version": "0.0.0",
+  "description": "FileUpload",
+  "main": "server.js",
+  "author": {
+    "name": "",
+    "email": ""
+  },
+  "dependencies": {
+    "formidable": "^1.0.15",
+    "node-uuid": "^1.4.1"
+  }
+}

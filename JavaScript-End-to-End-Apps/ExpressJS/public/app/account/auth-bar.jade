@@ -1,0 +1,33 @@
+div(ng-controller='LoginCtrl')
+    .authentication
+        span(ng-hide="identity.isAuthenticated()")
+            a.button(href='#/signup') Register
+            a.button.show-slide-menu(href='javascript:;') Login
+        .welcome.show-slide-menu(ng-show="identity.isAuthenticated()")
+            | Welcome, {{ identity.currentUser.username }}!
+            .arrow-down
+    #login-form.slide-menu(ng-hide="identity.isAuthenticated()")
+        form(name="loginForm")
+            fieldset
+                legend Login
+                input(type='text', placeholder='Username', required='required', ng-model='user.username')
+                br
+                input(type='password', placeholder='Password', required='required', ng-model='user.password')
+                br
+                button(ng-click="login(user)", ng-disabled="loginForm.$invalid") Login
+    .slide-menu(ng-show="identity.isAuthenticated()")
+        ul.slide-select
+            li(ng-show="identity.currentUser.isAdmin()")
+                a(href="#/admin/makes") Manage makes
+            li(ng-show="identity.currentUser.isAdmin()")
+                a(href="#/admin/models") Manage models
+            li(ng-show="identity.currentUser.isAdmin()")
+                a(href="#/admin/categories") Manage categories
+            li
+                a(href="#/profile") Profile
+            li(ng-hide="identity.currentUser.isAdmin()")
+                a(href="#/cars/add") Add car ad
+            li(ng-hide="identity.currentUser.isAdmin()")
+                a(href="#/cars/my-ads") My ads
+            li
+                a(href="#" ng-click="logout()") Sign Out

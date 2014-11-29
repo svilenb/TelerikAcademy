@@ -1,0 +1,17 @@
+.title-options
+    h2 Car categories
+    .options
+        a.button(href='#/admin/categories/add') Add
+table.cars
+    thead
+        tr
+            th
+                | Category name
+                span(ng-click="sortBy('')") ⇅
+            th
+    tbody
+        tr(ng-repeat="category in categories")
+            td
+                a(href='#/admin/categories/{{category._id}}') {{category.name}}
+            td
+                a.button(href='#/admin/categories/{{category._id}}') Edit

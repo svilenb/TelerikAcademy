@@ -1,0 +1,432 @@
+@charset "utf-8";
+html, body, p, h1, h2, h3, h4, h5, h6, header, footer, section, aside, nav, article, hr, ul, ol, dl
+  margin 0
+  padding 0
+
+img
+  border none
+
+h1, h2, h3, h4, h5, h6
+  font-weight normal
+
+h2
+  margin 20px 0 10px 0
+
+hr
+  border none
+  background #CCC
+  height 1px
+
+strong
+  font-weight 500
+
+a
+  color #126270
+  text-decoration none
+  &:hover
+    border-bottom 2px solid #0e899f
+  &.neutral
+    border none
+  &.button
+    display inline-block
+    text-decoration none
+
+body
+  background #FFF
+  font-family "Ubuntu", sans-serif
+  -webkit-font-smoothing antialiased
+  font-size 15px
+  color #6F6F6F
+
+#wrapper
+  position relative
+  width 900px
+  height auto
+  margin 0 auto
+
+#main-header
+  position relative
+  padding 10px 3px
+  box-shadow inset 0 -3px 3px -3px rgba(0, 0, 0, 0.5)
+  height 53px
+  .authentication
+    margin-top 10px
+    float right
+    div
+      &.welcome
+        margin-top 10px
+        cursor pointer
+        &:hover
+          border-bottom 1px dotted #000
+  img
+    &.logo
+      float left
+  h1
+    &.header
+      position relative
+      font-weight normal
+      display inline-block
+      float left
+      font-size 17px
+      margin-left 10px
+      color #d3d3d3
+      top 15px
+
+.arrow-down
+  width 0
+  height 0
+  margin-left 5px
+  border-left 5px solid transparent
+  border-right 5px solid transparent
+  border-top 5px solid #6F6F6F
+  display inline-block
+
+#main
+  position relative
+  margin-bottom 20px
+  padding 10px
+
+#main-footer
+  position relative
+  padding 10px 3px
+  box-shadow inset 0 3px 5px -4px rgba(0, 0, 0, 0.5)
+  font-size 13px
+  & > span
+    &.left
+      margin-right 20px
+    &.right
+      float right
+      margin-left 20px
+
+button, input, select, textarea
+  outline none
+
+input[type="submit"]
+  cursor pointer
+
+input[type="file"]
+  width 300px
+
+button, input, select, a.button, textarea
+  font-family "Ubuntu", sans-serif
+  font-size 16px
+  padding 4px 6px
+  border 2px solid #CCC
+  color #CCC
+  background transparent
+  transition 0.3s ease
+  margin 0 2px
+  -webkit-border-radius 2px
+  -moz-border-radius 2px
+  border-radius 2px
+
+button, a.button
+  cursor pointer
+
+a.button, input
+  padding 5px 8px
+
+button:hover, a.button:hover
+  border-color #dc7421
+  color #dc7421
+
+input:hover, select:hover
+  border-color #CCC
+
+input, select, textarea
+  border-color #acacac
+  color #444
+
+input
+  &:invalid
+    box-shadow none
+
+textarea
+  width 98%
+  min-height 100px
+  max-height 400px
+  box-sizing border-box
+  resize vertical
+
+input:focus, select:focus, textarea:focus
+  border-color #dc7421
+  box-shadow 0 0 3px rgba(220, 116, 33, 0.5)
+
+.static-input-width
+  width 180px
+
+.static-select-width
+  width 200px
+
+.stat-sel-raligned-width
+  width 130px
+
+.static-number-width
+  width 170px
+  box-sizing border-box
+
+label
+  display block
+  margin-bottom 5px
+
+fieldset
+  overflow hidden
+  margin 15px 0 0 0
+  border none
+  legend
+    font-size 25px
+    margin-bottom 20px
+  .row
+    margin-bottom 10px
+    overflow hidden
+  .col
+    margin-right 10px
+    float left
+  p
+    &.title
+      font-size 18px
+      font-weight 500
+      margin-bottom 5px
+
+fieldset input, fieldset select, fieldset button
+  margin-left 0
+
+.slide-menu
+  position absolute
+  top 60px
+  right 0
+  background #FFF
+  box-shadow 0 1px 5px rgba(0, 0, 0, 0.7)
+  z-index 99999
+  display none
+
+#login-form
+  padding 25px 15px
+  input
+    margin-bottom 10px
+  fieldset
+    margin 0
+
+.slide-select
+  list-style-type none
+  overflow hidden
+  padding 0
+  & > li
+    transition background 0.3s ease
+    &:hover
+      background #dc7421
+  a
+    border none
+    display block
+    width 100%
+    height 100%
+    padding 6px 10px
+    color #777
+    &:hover
+      color #FFF
+
+#latest-ads
+  overflow hidden
+  & > .thumb-ad
+    width 267px
+
+.thumb-ad
+  white-space nowrap
+  position relative
+  border 1px solid #CCC
+  padding 7px
+  overflow hidden
+  transition 0.3s ease
+  margin 0 10px 10px 0
+  -webkit-border-radius 3px
+  -moz-border-radius 3px
+  border-radius 3px
+  float left
+  &:before
+    position absolute
+    width 12px
+    height 100%
+    top 0
+    right 0
+    box-shadow inset -10px 0 5px -5px #FFF
+    content ""
+    display block
+  & > div
+    float left
+  .info
+    margin-left 10px
+    max-width 20%
+  span
+    &.price
+      color #50a60a
+      font-weight 500
+      border 1px solid #50a60a
+      padding 0 4px
+    &.field
+      color #999
+  p
+    font-size 14px
+    margin-bottom 3px
+    &.title
+      font-size 16px
+      font-weight 500
+
+  .thumb-ad
+    &:hover
+      border-color #dc7421
+
+table
+  width 100%
+  border-spacing 0
+  &.cars
+    th
+      &:first-child
+        width 50%
+    td
+      &:last-child
+        text-align right
+      &:first-child
+        img
+          vertical-align middle
+          margin-right 15px
+        a
+          font-size 16px
+          font-weight 500
+    span
+      &.price
+        font-weight 500
+        color #50a60a
+        border 2px solid #50a60a
+        padding 3px 6px
+        background rgba(255, 255, 255, 0.7)
+        transition 0.4s ease
+        -webkit-border-radius 5px
+        -moz-border-radius 5px
+        border-radius 5px
+        cursor pointer
+        &:hover
+          box-shadow 0 0 3px rgba(80, 166, 10, 0.9)
+
+th, td
+  padding 10px 8px
+
+th
+  font-size 16px
+  color #222
+  font-weight 500
+  text-align left
+  border-bottom 1px solid #999
+  & > span
+    color #888
+    cursor pointer
+    &:hover
+      color #dc7421
+
+tr
+  &:nth-child(2n)
+    background #ececec
+
+.title-options
+  margin 15px 0 10px 0
+  & > h2
+    float left
+    margin 0
+  & > .options
+    float right
+
+.ad
+  overflow hidden
+  margin-top 25px
+  & > div
+    float left
+  & > .photo
+    margin-right 20px
+  .detailed-data
+    width 570px
+    overflow hidden
+    & > div
+      float left
+      &.price
+        float right
+        text-align right
+        padding-top 10px
+  .info
+    .gen-data
+      overflow hidden
+      margin-top 7px
+  .general
+    white-space nowrap
+    p
+      margin 5px 0 0 0
+      font-size 16px
+      float left
+  h3
+    font-size 24px
+    font-weight 500
+  p
+    &.edit
+      margin-top 15px
+  span
+    &.price-tag
+      font-weight 500
+      font-size 20px
+      color #50a60a
+      border 2px solid #50a60a
+      padding 4px 8px
+      -webkit-border-radius 5px
+      -moz-border-radius 5px
+      border-radius 5px
+  .additional-info
+    padding 12px 10px 0 20px
+    & > p
+      font-weight 500
+      word-spacing 0.5em
+      margin-bottom 17px
+      font-size 16px
+    span
+      font-weight normal
+      color #999
+
+p
+  &.ad-description
+    padding 10px
+    line-height 1.4em
+    text-align justify
+
+.contact-data
+  background #ffffff
+  background -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%)
+  background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed))
+  background -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%)
+  background -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%)
+  background -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%)
+  background linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%)
+  filter progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 )
+  border 1px solid #CCC
+  padding 15px
+  color #222
+  overflow hidden
+  & > p
+    &:first-child
+      float left
+    &:last-child
+      float right
+      text-align right
+
+.car-info-icon
+  background url(../img/car_info.png)
+  width 43px
+  height 30px
+  margin-right 15px
+  float left
+  &.dist
+    background-position 0 0
+  &.gears
+    background-position 0 -30px
+  &.engine
+    background-position 0 -60px
+  &.hp
+    background-position 0 -90px
+  &.cal
+    background-position 0 -120px
+

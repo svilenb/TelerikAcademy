@@ -1,0 +1,8 @@
+form(name="categoryForm")
+    fieldset
+        legend {{manipName}} category
+        .row
+            label(for='category') Enter category name
+            input(type='text', id='category', placeholder='Name', ng-model="categoryName", required)
+        .row
+            button(ng-click="manipulateCategory(categoryName)", ng-disabled="categoryForm.$invalid") {{buttonName}}
