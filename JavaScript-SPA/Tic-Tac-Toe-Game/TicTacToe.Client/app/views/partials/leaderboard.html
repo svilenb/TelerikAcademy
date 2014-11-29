@@ -1,0 +1,21 @@
+﻿<div class="container" ng-controller="LeaderboardController">
+    <table class="table table-striped">
+        <caption>Leaderboard</caption>
+        <thead>
+            <tr>
+                <th>
+                    Username
+                </th>
+                <th>
+                    Rank
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users">
+                <td>{{user.UserName}}</td>
+                <td>{{user.UserRank}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

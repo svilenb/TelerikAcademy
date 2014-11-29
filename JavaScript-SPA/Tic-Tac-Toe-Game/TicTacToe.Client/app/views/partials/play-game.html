@@ -1,0 +1,30 @@
+﻿<div class="container" ng-controller="PlayGameController">
+    <h1>Play game</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <form name="playGameForm" class="form-horizontal">
+                <div class="form-group">
+                    <label for="gameId" class="col-md-6 control-label">GameId</label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control validity" id="gameId" placeholder="Game id" required ng-model="game.GameId" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="row" class="col-md-6 control-label">Row</label>
+                    <div class="col-md-6">
+                        <input type="number" class="form-control validity" id="row" placeholder="Row" required ng-model="game.Row" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="col" class="col-md-6 control-label">Col</label>
+                    <div class="col-md-6">
+                        <input type="number" class="form-control validity" id="col" placeholder="Col" required ng-model="game.Col" />
+                    </div>
+                </div>
+                <button class="btn btn-default pull-right" ng-disabled="playGameForm.$invalid" ng-click="playGame(game)">Play</button>
+            </form>
+        </div>
+        <div class="col-md-4" gamefield></div>
+    </div>
+</div>
+

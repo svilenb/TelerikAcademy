@@ -1,0 +1,32 @@
+﻿<div class="container" ng-controller="MyGamesController">
+    <table class="table table-striped">
+        <caption>My games</caption>
+        <thead>
+            <tr>
+                <th>Game id</th>
+                <th>First player name</th>
+                <th>Second player name</th>
+                <th>Board</th>
+                <th>State</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="game in games">
+                <td>{{game.Id}}</td>
+                <td>{{game.FirstPlayerName}}</td>
+                <td>{{game.SecondPlayerName}}</td>
+                <td>{{game.Board}}</td>
+                <td>{{game.State | gameState}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <ul class="pagination">
+        <li><a href="#/my-games/{{page - 1}}">&laquo;</a></li>
+        <li><a href="#/my-games/1">1</a></li>
+        <li><a href="#/my-games/2">2</a></li>
+        <li><a href="#/my-games/3">3</a></li>
+        <li><a href="#/my-games/4">4</a></li>
+        <li><a href="#/my-games/5">5</a></li>
+        <li><a href="#/my-games/{{page + 1}}">&raquo;</a></li>
+    </ul>
+</div>

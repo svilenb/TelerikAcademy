@@ -1,0 +1,26 @@
+<div class="container" ng-controller="AvailableGamesController">
+    <table class="table table-striped">
+        <caption>All available games</caption>
+        <thead>
+            <tr>
+                <th>Game id</th>
+                <th>First player name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="game in games">
+                <td>{{game.Id}}</td>
+                <td>{{game.FirstPlayerName}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <ul class="pagination">
+        <li><a href="#/available-games/{{page - 1}}">&laquo;</a></li>
+        <li><a href="#/available-games/1">1</a></li>
+        <li><a href="#/available-games/2">2</a></li>
+        <li><a href="#/available-games/3">3</a></li>
+        <li><a href="#/available-games/4">4</a></li>
+        <li><a href="#/available-games/5">5</a></li>
+        <li><a href="#/available-games/{{page + 1}}">&raquo;</a></li>
+    </ul>
+</div>

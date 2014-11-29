@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Sheeps and Rams</title>
+    <link href="styles/number-guessing-game.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <hgroup>
+            <h1>Sheeps and Rams</h1>
+            <h2>Number guessing game</h2>
+        </hgroup>
+    </header>
+    <section id="assignment">
+        <h3>Assignment</h3>
+        <ul>
+            <li>
+                Create a simple number guessing game
+                <ul>
+                    <li>
+                        The computer generates a random number with four different digits
+                        <ul>
+                            <li>The leftmost digit must not be 0 (zero)</li>
+                            <li>For simplicity called abcd</li>
+                        </ul>
+                    </li>
+                    <li>
+                        At each turn the player enters a four-digit number
+                        <ul>
+                            <li>
+                                For simplicity called xyzw
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        When the game ends:
+                        <ul>
+                            <li>Ask the player for a nickname</li>
+                            <li>Save the nickname inside the localStorage</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Implement a high-score list
+                    </li>
+                    <li>
+                        Sheep means that a digit from xyzw is contained in abcd, but not on the same position
+                        <ul>
+                            <li>If two such digits exists, the sheep are 2</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Ram means that a digit from xyzw is contained in abcd and it is on the same position
+                        <ul>
+                            <li>If two such digits exists, the rams are 2</li>
+                        </ul>
+                    </li>
+                    <li>
+                        The game continues until the player guesses the number abcd
+                        <ul>
+                            <li>i.e. has 4 rams</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section id="game-ui">
+        <p class="big">Enter your guess</p>
+        <p>The number must be with four unique digits</p>
+        <input type="number" id="guess" />
+        <div id="buttons">
+            <button id="new-game-button" type="button">New game</button>
+            <button id="check-button" type="button">Check</button>
+            <button id="high-score-button">Show highscore</button>
+        </div>
+        <dl id="result">
+            <dt>Number of rams</dt>
+            <dd id="rams"></dd>
+            <dt>Number of sheeps</dt>
+            <dd id="sheeps"></dd>
+        </dl>
+        <p id="winning-message" class="big"></p>
+        <p id="exception" class="big"></p>
+    </section>
+    <section id="high-score-board"></section>
+    <script src="libs/jquery-2.1.1.min.js"></script>
+    <script src="scripts/game.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

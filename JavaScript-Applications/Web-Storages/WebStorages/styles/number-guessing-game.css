@@ -1,0 +1,42 @@
+﻿body {
+    background-color: goldenrod;
+    color: white;
+}
+
+section {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    border: 1px solid white;
+    background-color: darkorange;
+    padding: 10px;
+}
+
+
+#game-ui {
+    text-align: center;
+}
+
+dl dt, dd {
+    display: inline-block;
+}
+
+    dl dt:after {
+        content: ": ";
+    }
+
+dl dd, dt {
+    margin: 5px;
+}
+
+.big {
+    font-size: 1.5em;
+}
+
+#guess {
+    margin-bottom: 10px;
+}
+
+header, #high-score-board {
+    text-align: center;
+}

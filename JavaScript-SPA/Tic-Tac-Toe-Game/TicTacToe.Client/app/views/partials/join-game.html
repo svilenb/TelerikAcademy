@@ -1,0 +1,19 @@
+﻿<div class="container" ng-controller="JoinGameController">
+    <h1>Join game</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <form name="joinGameForm" class="form-horizontal">
+                <div class="form-group">
+                    <label for="gameId" class="col-md-4 control-label">GameId</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control validity" id="gameId" placeholder="Game id" required ng-model="stringGameId" />
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <button class="btn btn-default" ng-disabled="joinGameForm.$invalid" ng-click="joinGame(stringGameId)">Join game by Id</button>
+                    <button class="btn btn-default" ng-click="joinRandomGame()">Join random game</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
