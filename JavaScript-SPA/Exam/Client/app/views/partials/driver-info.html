@@ -1,0 +1,35 @@
+<div class="container" ng-controller="DriverInfoCtrl">
+    <h2>{{driver.name}}</h2>
+    <p>
+        Upcoming trips: {{driver.numberOfUpcomingTrips}} Total trips: {{driver.numberOfTotalTrips}}
+    </p>
+    <div class="row" ng-show="details">
+        <div class="col-md-4">
+            <label for="isMine" class="col-md-2 control-label">IsMine: </label>
+            <input type="checkbox" id="isMine" value="Mine" ng-model="mineTrips" class="col-md-2">
+        </div>
+        <div class="col-md-4">
+            <label for="onlyDrivers" class="col-md-2 control-label">OnlyDrivers: </label>
+            <input type="checkbox" id="onlyDrivers" value="Driver" ng-model="onlyDrivers" class="col-md-2">
+        </div>
+    </div>
+    <table class="table table-striped">
+        <caption>Driver infop</caption>
+        <thead>
+            <tr>
+                <th>Driver</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Departure time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="trip in driver.trips">
+                <td>{{trip.driverName}}</td>
+                <td>{{trip.from}}</td>
+                <td>{{trip.to}}</td>
+                <td>{{trip.departureDate}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
