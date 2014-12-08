@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Service="StringAppearances.StringAppearancesService" Language="C#" %>
