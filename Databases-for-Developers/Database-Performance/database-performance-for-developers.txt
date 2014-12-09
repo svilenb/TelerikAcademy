@@ -1,0 +1,106 @@
+1. Create a table in SQL Server with 10 000 000 log entries (date + text). Search in the table by date range. Check the speed (without caching).
+----------------------------------------------------------
+
+INSERT INTO Logs(Date, Text) VALUES ('1980-01-01', 'Some log');
+INSERT INTO Logs(Date, Text) VALUES ('1990-01-01', 'Stange log');
+INSERT INTO Logs(Date, Text) VALUES ('1985-01-01', 'Another log');
+INSERT INTO Logs(Date, Text) VALUES ('1995-01-01', 'Other log');
+
+DECLARE @Counter int = 0
+WHILE (SELECT COUNT(*) FROM Logs) < 2500000
+BEGIN
+  INSERT INTO Logs(Date, Text)
+  SELECT DATEADD(MONTH, @Counter + 1, Date), Text + CONVERT(varchar, @Counter) FROM Logs
+  SET @Counter = @Counter + 1
+END
+
+CHECKPOINT; DBCC DROPCLEANBUFFERS; -- Empty the SQL Server cache
+
+SELECT Text 
+FROM Logs 
+WHERE Date BETWEEN CONVERT(datetime, '1989-01-01') AND CONVERT(datetime, '1990-01-01');
+
+----------------------------------------------------------
+
+2. Add an index to speed-up the search by date. Test the search speed (after cleaning the cache).
+----------------------------------------------------------
+
+CREATE INDEX IDX_Logs_Date ON Logs(Date);
+
+CHECKPOINT; DBCC DROPCLEANBUFFERS; -- Empty the SQL Server cache
+
+SELECT *
+FROM Logs 
+WHERE Date BETWEEN CONVERT(datetime, '1989-01-01') AND CONVERT(datetime, '1990-01-01');
+
+----------------------------------------------------------
+
+3. Add a full text index for the text column. Try to search with and without the full-text index and compare the speed.
+----------------------------------------------------------
+
+CREATE FULLTEXT CATALOG LogsFullTextForText
+WITH ACCENT_SENSITIVITY = OFF
+
+CREATE FULLTEXT INDEX ON Logs(Text)
+KEY INDEX PK_Logs_LogsId
+ON LogsFullTextForLogText
+WITH CHANGE_TRACKING AUTO
+
+CHECKPOINT; DBCC DROPCLEANBUFFERS; -- Empty the SQL Server cache
+
+SELECT * FROM Logs
+WHERE Text LIKE '%1234%' --very slow
+
+CHECKPOINT; DBCC DROPCLEANBUFFERS; -- Empty the SQL Server cache
+
+SELECT * FROM Logs
+WHERE CONTAINS(Text, '1234')
+
+DROP FULLTEXT INDEX ON Logs
+DROP FULLTEXT CATALOG LogsFullTextForText
+
+----------------------------------------------------------
+
+4. Create the same table in MySQL and partition it by date (1990, 2000, 2010). Fill 1 000 000 log entries. Compare the searching speed in all partitions (random dates) to certain partition (e.g. year 1995).
+----------------------------------------------------------
+
+CREATE DATABASE PartitioningDB;
+
+USE PartitioningDB;
+
+CREATE TABLE Logs(
+	LogId int NOT NULL AUTO_INCREMENT,
+	Date datetime,
+	Text nvarchar(100),
+	CONSTRAINT PK_Logs_LogId PRIMARY KEY(LogId, Date)
+) PARTITION BY RANGE(YEAR(Date))(
+	PARTITION p0 VALUES LESS THAN (1990),
+    PARTITION p1 VALUES LESS THAN (2000),
+	PARTITION p2 VALUES LESS THAN (2010),
+	PARTITION p3 VALUES LESS THAN MAXVALUE
+);
+
+USE PartitioningDB;
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS insert_million_rows $$
+
+CREATE PROCEDURE InsertMilionRowsInDB () 
+BEGIN
+DECLARE counter INT DEFAULT 0;
+	START TRANSACTION;
+	WHILE counter < 1000000 DO
+		INSERT INTO Logs(Date, Text)
+		VALUES(TIMESTAMPADD(DAY, FLOOR(1 + RAND() * 10000), '1990-01-01'),
+		CONCAT('Sample log ', counter));
+SET counter = counter + 1;
+END WHILE;
+END $$
+
+CALL InsertMilionRowsInDB ();
+
+SELECT * FROM logs PARTITION(p1) WHERE YEAR(Date) = 1995;
+
+SELECT * FROM logs WHERE YEAR(Date) = 1995;
+
+----------------------------------------------------------

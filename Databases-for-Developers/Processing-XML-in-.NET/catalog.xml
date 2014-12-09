@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<catalog>
+  <album>
+    <name>Bad</name>
+    <artist>Michael Jackson</artist>
+    <year>1987</year>
+    <producer>Epic Records</producer>
+    <price>30</price>
+    <songs>
+      <song>
+        <title>Bad</title>
+        <duration>4</duration>
+      </song>
+      <song>
+        <title>Smooth Criminal</title>
+        <duration>4</duration>
+      </song>
+      <song>
+        <title>Dirty Diana</title>
+        <duration>5</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>American Life</name>
+    <artist>Madonna</artist>
+    <year>2010</year>
+    <producer>Warner Bros.</producer>
+    <price>12</price>
+    <songs>
+      <song>
+        <title>Die Another Day</title>
+        <duration>4</duration>
+      </song>
+      <song>
+        <title>Hollywood</title>
+        <duration>4</duration>
+      </song>
+      <song>
+        <title>Easy Ride</title>
+        <duration>3</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>Californication</name>
+    <artist>Red Hot Chili Peppers</artist>
+    <year>1999</year>
+    <producer>Rick Rubin</producer>
+    <price>8</price>
+    <songs>
+      <song>
+        <title>Parallel Universe</title>
+        <duration>3</duration>
+      </song>
+      <song>
+        <title>Around the World</title>
+        <duration>4</duration>
+      </song>
+      <song>
+        <title>This Velvet Glove</title>
+        <duration>3</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>Thriller</name>
+    <artist>Michael Jackson</artist>
+    <year>1982</year>
+    <producer>Quincy Jones</producer>
+    <price>24</price>
+    <songs>
+      <song>
+        <title>Billie Jean</title>
+        <duration>5</duration>
+      </song>
+      <song>
+        <title>Thriller</title>
+        <duration>4</duration>
+      </song>
+      <song>
+        <title>Human Nature</title>
+        <duration>4</duration>
+      </song>
+    </songs>
+  </album>
+</catalog>

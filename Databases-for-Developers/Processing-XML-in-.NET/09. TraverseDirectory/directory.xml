@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<root>
+	<file name="09. TraverseDirectory.csproj" />
+	<file name="App.config" />
+	<file name="directory.xml" />
+	<file name="TraverseDirectory.cs" />
+	<dir name="bin">
+		<dir name="Debug">
+			<file name="_09.TraverseDirectory.exe" />
+			<file name="_09.TraverseDirectory.exe.config" />
+			<file name="_09.TraverseDirectory.pdb" />
+			<file name="_09.TraverseDirectory.vshost.exe" />
+			<file name="_09.TraverseDirectory.vshost.exe.config" />
+			<file name="_09.TraverseDirectory.vshost.exe.manifest" />
+			<dir name="Release">
+				<dir name="obj">
+					<dir name="Debug">
+						<file name="09. TraverseDirectory.csproj.FileListAbsolute.txt" />
+						<file name="09. TraverseDirectory.csprojResolveAssemblyReference.cache" />
+						<file name="DesignTimeResolveAssemblyReferencesInput.cache" />
+						<file name="TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+						<file name="TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+						<file name="TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+						<file name="_09.TraverseDirectory.exe" />
+						<file name="_09.TraverseDirectory.pdb" />
+						<dir name="TempPE">
+							<dir name="Properties">
+								<file name="AssemblyInfo.cs" />
+							</dir>
+						</dir>
+					</dir>
+				</dir>
+			</dir>
+		</dir>
+	</dir>
+</root>

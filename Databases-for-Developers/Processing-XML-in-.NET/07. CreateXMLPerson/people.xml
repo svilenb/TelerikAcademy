@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<people>
+  <person>
+    <name>Peter Ivanov</name>
+    <address>Pesho street</address>
+    <phone>088888888</phone>
+  </person>
+  <person>
+    <name>Ivan Petrov</name>
+    <address>Pesho street</address>
+    <phone>Vankata street</phone>
+  </person>
+</people>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<albums>
+	<album>
+		<name>Bad</name>
+		<artist>Michael Jackson</artist>
+	</album>
+	<album>
+		<name>American Life</name>
+		<artist>Madonna</artist>
+	</album>
+	<album>
+		<name>Californication</name>
+		<artist>Red Hot Chili Peppers</artist>
+	</album>
+	<album>
+		<name>Thriller</name>
+		<artist>Michael Jackson</artist>
+	</album>
+</albums>

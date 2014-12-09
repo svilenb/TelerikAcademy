@@ -1,0 +1,274 @@
+SELECT FirstName, LastName, Salary
+FROM Employees
+WHERE Salary = 
+	(SELECT MIN(Salary) FROM Employees)
+	
+=======================================================================
+
+SELECT FirstName, LastName, Salary
+FROM Employees
+WHERE  
+	(Salary > (SELECT MIN(Salary) FROM Employees) AND
+	Salary <= (SELECT MIN(Salary) * 1.1 From Employees))
+
+=======================================================================
+
+SELECT FirstName + ' ' + LastName AS [Full Name], DepartmentID, Salary
+FROM Employees e
+WHERE Salary = 
+  (SELECT MIN(Salary) FROM Employees 
+   WHERE DepartmentID = e.DepartmentID)	
+   
+=======================================================================  
+
+SELECT AVG(Salary) [Average Salary]
+FROM Employees
+WHERE DepartmentID = 1
+
+=======================================================================  
+
+SELECT AVG(Salary) [Average Salary]
+FROM Employees e
+	INNER JOIN Departments d
+		ON e.DepartmentID = d.DepartmentID
+WHERE d.Name = 'Sales'
+
+=======================================================================  
+
+SELECT COUNT(*) [Employees Count]
+FROM Employees e
+	INNER JOIN Departments d
+		ON e.DepartmentID = d.DepartmentID
+WHERE d.Name = 'Sales'
+
+=======================================================================  
+
+SELECT COUNT(*) [Employees Count]
+FROM Employees 
+WHERE ManagerID IS NOT NULL
+
+=======================================================================  
+
+SELECT AVG(Salary) [Average Salary], d.Name AS [Department Name]
+FROM Employees e
+	INNER JOIN Departments d
+		ON e.DepartmentID = d.DepartmentID
+GROUP BY d.Name
+
+=======================================================================  
+
+SELECT COUNT(*) [Employees Count], t.Name, e.DepartmentID
+FROM Employees e
+	JOIN Addresses a
+		ON e.AddressID = a.AddressID
+	JOIN Towns t
+		ON a.TownID = t.TownID
+GROUP BY e.DepartmentID, t.Name
+
+=======================================================================  
+
+SELECT FirstName, LastName
+FROM Employees m
+WHERE 5 = 
+	(
+		SELECT COUNT (*)
+		FROM Employees e
+		WHERE e.ManagerID = m.EmployeeID
+	)
+
+=======================================================================  
+
+SELECT e.FirstName + ' ' + e.LastName AS [Employee Full Name], 
+	ISNULL(m.FirstName +' '+ m.LastName, 'no manager') AS [Manager Full Name]
+FROM Employees m
+        RIGHT OUTER JOIN Employees e
+			ON e.ManagerID = m.EmployeeID
+
+=======================================================================  
+
+SELECT FirstName, LastName
+FROM Employees
+WHERE 5 = LEN(LastName)
+
+=======================================================================  
+
+SELECT CONVERT(varchar(50), GETDATE(), 13) AS [DATE]
+
+=======================================================================  
+
+CREATE TABLE Users (
+	UserID int IDENTITY,
+	Username nvarchar(20) UNIQUE NOT NULL,
+	Password nvarchar(25) CHECK(LEN([Password]) > 4),
+	Fullname nvarchar(50) NOT NULL,
+    LastLoginTime datetime
+	CONSTRAINT PK_USERS PRIMARY KEY (UserID)
+)
+GO
+
+=======================================================================  
+
+CREATE VIEW UsersToday AS
+SELECT Username, DAY(GETDATE() - LastLoginTime) AS DayDifference
+FROM Users
+WHERE DAY(GETDATE() - LastLoginTime) = 1
+
+=======================================================================  
+
+CREATE TABLE Groups (
+	GroupID int IDENTITY,
+	Name nvarchar(25) UNIQUE,
+	CONSTRAINT PK_Groups PRIMARY KEY (GroupID)
+)
+GO
+
+=======================================================================  
+
+ALTER TABLE Users ADD GroupID int
+
+
+ALTER TABLE Users
+ADD CONSTRAINT FK_Users_Groups
+  FOREIGN KEY (GroupID)
+  REFERENCES Groups(GroupID)
+
+=======================================================================  
+
+INSERT INTO Groups 
+VALUES (N'Gamers'), (N'Programmers')
+GO
+
+=======================================================================  
+
+INSERT INTO Users VALUES	
+	(N'pesho', N'12345', N'Peter Petrov', CAST(N'2014-08-25 00:00:00.000' AS DateTime), 1),
+	(N'gosho', N'12345', N'George Georgiev', CAST(N'2014-08-24 00:00:00.000' AS DateTime), 2),
+	(N'gesho', N'12345', N'Gesho Geshev', CAST(N'2014-08-26 00:00:00.000' AS DateTime), 1)
+GO
+
+=======================================================================  
+
+UPDATE Groups
+SET Name = 'Mathematicians'
+WHERE GroupID = 1
+
+
+UPDATE Users
+SET Password = 'secret'
+WHERE Username = 'gosho'
+
+=======================================================================  
+
+DELETE FROM Users Where GroupID = 2
+
+DELETE FROM Groups WHERE GroupID = 2
+
+=======================================================================  
+
+INSERT INTO Users(Username, [Password], Fullname)
+SELECT  LOWER(LEFT(FirstName, 3) + LastName), 
+		LOWER(LEFT(FirstName, 3) + LastName),
+		(FirstName + ' ' + LastName)
+FROM Employees
+
+=======================================================================  
+
+UPDATE Users
+SET [Password] = NULL
+WHERE LastLoginTime < CONVERT(datetime, '10-03-2010')
+
+=======================================================================  
+
+DELETE FROM Users
+WHERE [Password] IS NULL
+
+=======================================================================  
+
+SELECT AVG(e.Salary) AS [Average Salary], e.JobTitle, d.Name AS [Department Name]
+FROM Employees e
+        JOIN Departments d
+			ON e.DepartmentID = d.DepartmentID
+GROUP BY e.JobTitle, d.Name
+
+=======================================================================  
+
+SELECT e.FirstName + ' ' + e.LastName AS [Full Name],
+	 e.Salary AS [Minimum Salary], e.JobTitle,
+	 d.Name AS [Department Name]
+FROM Employees e
+        JOIN Departments d
+			ON e.DepartmentID = d.DepartmentID
+GROUP BY e.JobTitle, d.Name, e.Salary, e.FirstName + ' ' + e.LastName, e.DepartmentID
+HAVING e.Salary =
+	(
+        SELECT MIN(Salary)
+        FROM Employees                
+        WHERE JobTitle = e.JobTitle AND DepartmentID = e.DepartmentID
+    )
+
+=======================================================================  
+
+SELECT TOP(1) t.Name, COUNT(e.EmployeeID) AS [Working Employees Number]
+FROM Towns t
+        JOIN Addresses a
+			ON t.TownID = a.TownID
+        JOIN Employees e
+			ON e.AddressID = a.AddressID
+Group By t.Name
+ORDER BY [Working Employees Number] DESC
+
+=======================================================================  
+
+SELECT COUNT(DISTINCT m.EmployeeID), t.Name
+FROM Employees m
+	INNER JOIN Employees e
+		ON e.ManagerID = m.EmployeeID
+	INNER JOIN Addresses a
+		ON a.AddressID = m.AddressID
+    INNER JOIN Towns t
+        ON a.TownID = t.TownID
+GROUP By t.Name
+
+=======================================================================  
+
+BEGIN TRAN
+DELETE FROM Employees 
+WHERE DepartmentID IN 
+	(SELECT DepartmentID FROM Departments WHERE Name = 'Sales')
+ROLLBACK TRAN
+GO
+
+=======================================================================  
+
+BEGIN TRAN
+DROP TABLE EmployeesProjects
+ROLLBACK TRAN
+GO
+
+=======================================================================  
+
+CREATE TABLE #TemporaryTable(
+	EmployeeID int NOT NULL,
+	ProjectID int NOT NULL
+)
+GO
+
+INSERT INTO #TemporaryTable
+	SELECT EmployeeID, ProjectID
+	FROM EmployeesProjects
+
+DROP TABLE EmployeesProjects
+
+CREATE TABLE EmployeesProjects (
+	EmployeeID int NOT NULL,
+	ProjectID int NOT NULL,
+	CONSTRAINT PK_EmployeesProjects PRIMARY KEY(EmployeeID, ProjectID),
+	CONSTRAINT FK_EmployeesProjects_Employees FOREIGN KEY(EmployeeID) REFERENCES Employees(EmployeeID),
+	CONSTRAINT FK_EmployeesProjects_Projects FOREIGN KEY(ProjectID) REFERENCES Projects(ProjectID)
+)
+
+INSERT INTO EmployeesProjects
+SELECT EmployeeID, ProjectID
+FROM #TemporaryTable
+
+=======================================================================  

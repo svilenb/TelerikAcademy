@@ -1,0 +1,39 @@
+1. What does the XML language represents? What does it used for? 
+-------------------------------------------------------------------
+
+Extensible Markup Language (XML) is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. It is defined in the XML 1.0 Specification produced by the W3C, and several other related specifications, all free open standards.
+
+The design goals of XML emphasize simplicity, generality, and usability over the Internet. It is a textual data format with strong support via Unicode for different human languages. Although the design of XML focuses on documents, it is widely used for the representation of arbitrary data structures, for example in web services.
+
+Many application programming interfaces (APIs) have been developed to aid software developers with processing XML data, and several schema systems exist to aid in the definition of XML-based languages.
+
+-------------------------------------------------------------------
+
+3. What does the namespaces represents in the XML documents? What are they used for? 
+-------------------------------------------------------------------
+XML has a concept of a namespace, an abstract domain to which a collection of element and attribute names can be assigned. The namespace name (a character string which must adhere to the generic URI syntax) identifies an XML namespace.
+-------------------------------------------------------------------
+
+4. Explore http://en.wikipedia.org/wiki/ Uniform_Resource_Identifier to learn more about URI, URN and URL definitions.
+-------------------------------------------------------------------
+In computing, a uniform resource identifier (URI) is a string of characters used to identify a name of a resource. Such identification enables interaction with representations of the resource over a network, typically the World Wide Web, using specific protocols. Schemes specifying a concrete syntax and associated protocols define each URI. The most common form of URI is the uniform resource locator (URL), frequently referred to informally as a web address. More rarely seen in usage is the uniform resource name (URN), which was designed to complement URLs by providing a mechanism for the identification of resources in particular namespaces.
+
+A URL is a URI that, in addition to identifying a web resource, specifies the means of acting upon or obtaining the representation, specifying both its primary access mechanism and network location.
+
+A URN is a URI that identifies a resource by name in a particular namespace. A URN can be used to talk about a resource without implying its location or how to access it.
+-------------------------------------------------------------------
+
+2. Create XML document students.xml, which
+contains structured description of students. For each
+student you should enter information for his name,
+sex, birth date, phone, email, course, specialty,
+faculty number and a list of taken exams (exam
+name, tutor, score).
+5. Add default namespace for the students
+"urn:students".
+6. Create XSD Schema for the students.xml
+document. Add new elements in the schema:
+information for enrollment (date and exam score)
+and teacher's endorsements.
+7. Write a XSL stylesheet to visualize the students as
+HTML. Test it in your favourite browser.
