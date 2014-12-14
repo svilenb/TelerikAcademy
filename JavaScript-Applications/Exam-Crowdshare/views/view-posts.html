@@ -1,0 +1,62 @@
+<div class="panel-heading">
+  <h2 class="text-center">Posts</h2>
+</div>
+<div class="panel-body">
+  <form role="form" class="form-horizontal">
+    <div class="form-group">
+      <label for="name" class="col-md-3 control-label">Username</label>
+      <div class="col-md-4">
+        <input type="text" id="name" class="form-control">
+      </div>
+      <div class="col-md-5">
+        <button id="username-filter-btn" type="button" class="btn btn-success">Filter by username</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pattern" class="col-md-2 control-label">Pattern</label>
+      <div class="col-md-4">
+        <input type="text" id="pattern" class="form-control">
+      </div>
+      <div class="col-md-4">
+        <button id="pattern-filter-btn" type="button" class="btn btn-success">Filter by pattern</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-offset-4 col-lg-2">
+        <button id="both-filter-btn" type="button" class="btn btn-success">Filter by both</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-4">
+        <select id="sort-direction" class="form-control">
+          <option value="ascending" selected="selected">Ascending</option>
+          <option value="descending">Descending</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <button id="title-sort-btn" type="button" class="btn btn-success">Sort by title</button>
+      </div>
+      <div class="col-md-4">
+        <button id="date-sort-btn" type="button" class="btn btn-success">Sort by date</button>
+      </div>
+    </div>
+  </form>
+  <br/>
+  <div id="posts">
+  </div>
+  <div class="row">
+    <div class="col-md-offset-3 col-md-2">
+      <button id="previous-page" class="form-control btn btn-info">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </button>
+    </div>
+    <div class="col-md-2">
+      <input id="page-number" type="text" class="form-control" value="1" />
+    </div>
+    <div class="col-md-2">
+      <button id="next-page" class="form-control btn btn-info pull-right">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </button>
+    </div>
+  </div>
+</div>

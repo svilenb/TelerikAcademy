@@ -1,0 +1,15 @@
+<div id="bookmarks">
+  <ul class="list-group">
+    {{#posts}}
+    <li class="list-group-item">
+      <h4 class="list-group-item-heading">{{title}}</h4>
+      <div class="list-group-item-text">
+        <p>
+          <span>Created by: {{user.username}}</span>
+          <span>at: {{parsedDate postDate}}</span>
+        </p>
+        <p style="word-wrap: break-word;">{{body}}</p>
+      </div>
+    </li>
+    {{/posts}}
+</div>
