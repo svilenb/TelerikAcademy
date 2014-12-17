@@ -185,3 +185,4 @@ FakesAssemblies/
 # Some libs
 PowerCollections.dll
 bower_components
+lib/

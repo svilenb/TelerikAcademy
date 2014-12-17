@@ -1,6 +1,8 @@
 (function() {
   require.config({
     paths: {
+      mocha: '../../bower_components/mocha/mocha',
+      chai: '../../bower_components/chai/chai',
       controller: '../../scripts/controller',
       sortTests: 'sort-tests',
       pagingTests: 'paging-tests',
@@ -14,7 +16,9 @@
     }
   });
 
-  require(['sortTests', 'pagingTests'], function(sortTests, pagingTests) {
+  require(['sortTests', 'pagingTests', 'chai', 'mocha'], function(sortTests, pagingTests, chai) {
+    mocha.setup('bdd');
+    expect = chai.expect;
     sortTests.run();
     pagingTests.run();
     mocha.run();

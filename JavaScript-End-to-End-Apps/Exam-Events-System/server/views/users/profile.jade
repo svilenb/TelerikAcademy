@@ -1,0 +1,58 @@
+﻿extends ../shared/layout
+
+block main-content
+    .row  
+        .col-md-6.panel.panel-default
+            .panel-heading
+                | Profile information
+            .row.panel-body
+                .col-md-6
+                    img.img-rounded(src='#{user.avatar}', width = 200, height= 150, alt='#{user.username}')
+                .col-md-6
+                    p Username: #{user.username}
+                    p First name: #{user.firstName}
+                    p Last name: #{user.lastName}
+                    p
+                        span.glyphicon.glyphicon-earphone : #{user.phoneNumber}
+                    p Points: #{user.eventPoints}
+                        if (user.facebook)
+                            p Facebook: #{user.facebook}
+                        if (user.twitter)
+                            p Twitter: #{user.twitter}
+                        if (user.linkedin)
+                            p LinkedIn: #{user.linkedin}
+                        if (user.googleplus)
+                            p Google+: #{user.googleplus}
+                            
+        form.col-md-6(method="post", enctype="multipart/form-data")                
+            label(for="phoneNumber") Phone number
+            input(id="phoneNumber" class="form-control" type="text" name="phoneNumber" placeholder="Phone number")
+            br
+            label(for="facebook") Facebook
+            input(id="facebook" class="form-control" type="text" name="facebook" placeholder="Facebook")
+            br        
+            label(for="twitter") Twitter
+            input(id="twitter" class="form-control" type="text" name="twitter" placeholder="Twitter")
+            br        
+            label(for="linkedin") Linkedin
+            input(id="linkedin" class="form-control" type="text" name="linkedin" placeholder="Linkedin")
+            br        
+            label(for="googleplus") Googleplus
+            input(id="googleplus" class="form-control" type="text" name="googleplus" placeholder="Googleplus")
+            br
+            label(for='avatar') Photo
+            input(type="file" name="avatar")
+            input(type="submit" class="btn btn-lg" value="Change")
+        
+    table.table.table-bordered
+        caption Created by me events
+        tr
+            th Title
+            th Description        
+            th Evaluation   
+        each event in myEvents
+            tr
+                td 
+                    a(href="/events/details/#{event._id}") #{event.title}
+                td #{event.description}                   
+                td #{event.evaluation}    
