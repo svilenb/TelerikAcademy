@@ -1,0 +1,15 @@
+﻿@model ForumSystem.Web.Areas.Administration.ViewModel.Posts.PostViewModel
+
+<div class="row">
+    <div class="col-md-2">
+        @Html.LabelFor(model => model.Title)
+    </div>
+    <div class="col-md-6">
+        @Html.Kendo().TextBoxFor(model => model.Title)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8">
+       @Html.EditorFor(model => model.Content)
+    </div>
+</div>

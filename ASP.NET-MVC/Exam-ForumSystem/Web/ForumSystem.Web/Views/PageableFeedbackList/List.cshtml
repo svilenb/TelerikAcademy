@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ForumSystem.Web.ViewModels.PageableFeedbackList.FeedbackDisplayViewModel>
+@{
+    ViewBag.Title = "List feedbacks";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@if (Model != null)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Author
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Content
+                </th>
+                <th>
+                    Created On
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var feedback in Model)
+            {
+                <tr>
+                    <td>
+                        @feedback.AuthorName
+                    </td>
+                    <td>
+                        @feedback.Title
+                    </td>
+                    <td>
+                        @feedback.Content
+                    </td>
+                    <td>
+                        @feedback.CreatedOn
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (ViewBag.Pages > 1)
+{
+    <nav>
+        <ul class="pagination">
+            <li><a href="@Url.Action("List", new { id = ViewBag.currentPage - 1})"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
+            @for (int i = 1; i <= ViewBag.Pages; i++)
+            {
+                <li><a href="@Url.Action("List", new { id = i})">@i</a></li>
+            }
+            <li><a href="@Url.Action("List", new { id = ViewBag.currentPage + 1})"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
+        </ul>
+    </nav>
+}
+
+
+
+
+

@@ -186,3 +186,6 @@ FakesAssemblies/
 PowerCollections.dll
 bower_components
 lib/
+kendo/
+tinymce/
+Kendo.Mvc.dll

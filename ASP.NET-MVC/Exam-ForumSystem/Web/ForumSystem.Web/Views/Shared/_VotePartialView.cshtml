@@ -1,0 +1,28 @@
+﻿@model ForumSystem.Web.ViewModels.Home.IndexVoteViewModel
+
+@if (User.Identity.IsAuthenticated)
+{
+    using (Ajax.BeginForm("Vote", null,
+    new AjaxOptions
+    {
+        UpdateTargetId = "your-vote",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST"
+    }, new { id = "voteForm" }))
+    {
+        <div class="form-group row">
+            @Html.HiddenFor(m => m.PostId)
+            <div class="row">
+                <div class="col-md-12">
+                    @Html.EditorFor(m => m.Value)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="submit" id="vote" class="btn btn-primary" value="Vote" />
+                </div>
+            </div>
+        </div>
+    }
+}
+

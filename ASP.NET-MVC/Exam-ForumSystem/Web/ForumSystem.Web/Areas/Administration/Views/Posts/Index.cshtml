@@ -1,0 +1,38 @@
+﻿@using ForumSystem.Web.Areas.Administration.ViewModel.Posts;
+@{
+    const string ControllerName = "Posts";
+    ViewBag.Title = ControllerName;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@(Html.Kendo().Grid<PostViewModel>()
+        .Name("grid")
+                    .Columns(cols =>
+                    {
+                        cols.Bound(model => model.Title).Width(10);
+                        cols.Bound(model => model.Content);
+                        cols.Bound(model => model.AuthorName);
+                        cols.Bound(model => model.IsDeleted);
+                        cols.Bound(model => model.CreatedOn);
+                        cols.Bound(model => model.ModifiedOn);
+                        cols.Command(c => c.Edit());
+                        cols.Command(c => c.Destroy());
+                    }
+                )
+                .ColumnMenu()
+                .Pageable(page => page.Refresh(true))
+                .Sortable()
+                .Groupable()
+                .Filterable()
+                .Editable(edit => edit.Mode(Kendo.Mvc.UI.GridEditMode.PopUp))
+                .ToolBar(toolbar => toolbar.Create())
+                .DataSource(data =>
+                    data
+                        .Ajax()
+                            .Model(m => m.Id(p => p.Id))
+                            .Read(read => read.Action("Read", ControllerName))
+                            .Create(create => create.Action("Create", ControllerName))
+                            .Update(update => update.Action("Update", ControllerName))
+                            .Destroy(destroy => destroy.Action("Destroy", ControllerName))
+                        ))
